@@ -1,988 +1,1331 @@
-<!DOCTYPE html>
-<html lang="pl">
+<!DOCTYPE html><html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>BankiPromoKody — Promocje, bonusy i okazje</title>
 
-    <title>BankiPromoKody — Promocje bankowe i bonusy</title>
+<meta name="description"
+      content="Sprawdź promocje bankowe, bonusy, gry, rabaty i ciekawe oferty dostępne online.">
 
-    <meta name="description"
-          content="Sprawdź promocje bankowe, bonusy za założenie konta oraz aktualne oferty banków.">
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="preconnect"
+      href="https://fonts.googleapis.com">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-          rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet">
 
-    <style>
+<style>
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-        html {
-            scroll-behavior: smooth;
-        }
+    html {
+        scroll-behavior: smooth;
+    }
 
-        body {
-            min-height: 100vh;
-            font-family: "Inter", sans-serif;
-            color: #ffffff;
+    body {
+        min-height: 100vh;
 
-            background:
-                radial-gradient(
-                    circle at 50% 0%,
-                    rgba(124, 58, 237, 0.25),
-                    transparent 35%
-                ),
-                radial-gradient(
-                    circle at 0% 100%,
-                    rgba(37, 99, 235, 0.15),
-                    transparent 30%
-                ),
-                #08080d;
+        font-family: "Inter", sans-serif;
 
-            overflow-x: hidden;
-        }
+        color: #ffffff;
 
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
+        background:
+            radial-gradient(
+                circle at 50% 0%,
+                rgba(124, 58, 237, 0.25),
+                transparent 35%
+            ),
+            radial-gradient(
+                circle at 0% 100%,
+                rgba(37, 99, 235, 0.15),
+                transparent 30%
+            ),
+            #08080d;
 
-        button {
-            font-family: inherit;
-        }
+        overflow-x: hidden;
+    }
 
-        body::before {
-            content: "";
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
 
-            position: fixed;
+    button {
+        font-family: inherit;
+    }
 
-            width: 400px;
-            height: 400px;
+    body::before {
+        content: "";
 
-            top: -200px;
-            left: 50%;
+        position: fixed;
 
-            transform: translateX(-50%);
+        width: 400px;
+        height: 400px;
 
-            background: rgba(124, 58, 237, 0.18);
+        top: -200px;
+        left: 50%;
 
-            filter: blur(100px);
+        transform: translateX(-50%);
 
-            border-radius: 50%;
+        background: rgba(124, 58, 237, 0.18);
 
-            pointer-events: none;
+        filter: blur(100px);
 
-            z-index: -1;
-        }
+        border-radius: 50%;
 
-        .page {
-            width: 100%;
-            max-width: 680px;
+        pointer-events: none;
 
-            margin: 0 auto;
+        z-index: -1;
+    }
 
-            padding: 35px 18px 30px;
-        }
+    .page {
+        width: 100%;
+        max-width: 680px;
 
-        .profile {
-            text-align: center;
+        margin: 0 auto;
 
-            margin-bottom: 28px;
+        padding: 35px 18px 30px;
+    }
 
-            animation: fadeUp 0.7s ease both;
-        }
+    /* ==============================
+       PROFIL
+       ============================== */
 
-        .bank-logo {
-            width: 96px;
-            height: 96px;
+    .profile {
+        text-align: center;
 
-            margin: 0 auto 16px;
+        margin-bottom: 32px;
 
-            display: flex;
+        animation: fadeUp 0.7s ease both;
+    }
 
-            align-items: center;
-            justify-content: center;
+    .main-logo {
+        width: 96px;
+        height: 96px;
 
-            border-radius: 50%;
+        margin: 0 auto 16px;
 
-            background:
-                linear-gradient(
-                    135deg,
-                    #8b5cf6,
-                    #3b82f6
-                );
+        display: flex;
 
-            border: 3px solid rgba(255,255,255,0.85);
+        align-items: center;
+        justify-content: center;
 
-            box-shadow:
-                0 0 0 5px rgba(124,58,237,0.18),
-                0 10px 35px rgba(0,0,0,0.45);
+        border-radius: 50%;
 
-            font-size: 38px;
-        }
+        background:
+            linear-gradient(
+                135deg,
+                #8b5cf6,
+                #3b82f6
+            );
 
-        .profile h1 {
-            font-size: 25px;
+        border: 3px solid rgba(255,255,255,0.85);
 
-            font-weight: 800;
+        box-shadow:
+            0 0 0 5px rgba(124,58,237,0.18),
+            0 10px 35px rgba(0,0,0,0.45);
 
-            letter-spacing: -0.5px;
+        font-size: 38px;
+    }
 
-            margin-bottom: 8px;
-        }
+    .profile h1 {
+        font-size: 25px;
 
-        .profile-badge {
-            display: inline-flex;
+        font-weight: 800;
 
-            align-items: center;
+        letter-spacing: -0.5px;
 
-            gap: 6px;
+        margin-bottom: 8px;
+    }
 
-            padding: 6px 11px;
+    .profile-badge {
+        display: inline-flex;
 
-            margin-bottom: 12px;
+        align-items: center;
 
-            border-radius: 999px;
+        gap: 6px;
 
-            background: rgba(124,58,237,0.12);
+        padding: 6px 11px;
 
-            border: 1px solid rgba(167,139,250,0.22);
+        margin-bottom: 12px;
 
-            color: #c4b5fd;
+        border-radius: 999px;
 
-            font-size: 12px;
+        background: rgba(124,58,237,0.12);
 
-            font-weight: 600;
-        }
+        border: 1px solid rgba(167,139,250,0.22);
 
-        .profile-badge i {
-            font-size: 10px;
-            color: #a78bfa;
-        }
+        color: #c4b5fd;
 
-        .profile p {
-            max-width: 480px;
+        font-size: 12px;
 
-            margin: 0 auto;
+        font-weight: 600;
+    }
 
-            color: #a1a1aa;
+    .profile-badge i {
+        font-size: 10px;
 
-            font-size: 14px;
+        color: #a78bfa;
+    }
 
-            line-height: 1.6;
-        }
+    .profile p {
+        max-width: 480px;
 
-        .section-title {
-            display: flex;
+        margin: 0 auto;
 
-            align-items: center;
+        color: #a1a1aa;
 
-            gap: 10px;
+        font-size: 14px;
 
-            margin: 0 3px 12px;
+        line-height: 1.6;
+    }
 
-            color: #71717a;
+    /* ==============================
+       SEKCJE
+       ============================== */
 
-            font-size: 11px;
+    .offer-section {
+        margin-top: 30px;
+    }
 
-            font-weight: 700;
+    .offer-section:first-of-type {
+        margin-top: 0;
+    }
 
-            text-transform: uppercase;
+    .section-title {
+        display: flex;
 
-            letter-spacing: 1.5px;
-        }
+        align-items: center;
 
-        .section-title::before {
-            content: "";
+        gap: 10px;
 
-            width: 22px;
-            height: 1px;
+        margin: 0 3px 12px;
 
-            background: #52525b;
-        }
+        color: #a1a1aa;
 
-        .links {
-            display: flex;
+        font-size: 12px;
 
-            flex-direction: column;
+        font-weight: 700;
 
-            gap: 12px;
-        }
+        text-transform: uppercase;
 
-        .link-card {
-            position: relative;
+        letter-spacing: 1.5px;
+    }
 
-            display: flex;
+    .section-title::before {
+        content: "";
 
-            align-items: center;
+        width: 22px;
+        height: 1px;
 
-            gap: 13px;
+        background: #7c3aed;
+    }
 
-            width: 100%;
+    .section-title i {
+        color: #a78bfa;
+    }
 
-            min-height: 78px;
+    /* ==============================
+       KARTY
+       ============================== */
 
-            padding: 13px 14px;
+    .links {
+        display: flex;
 
-            border-radius: 17px;
+        flex-direction: column;
 
-            background:
-                linear-gradient(
-                    135deg,
-                    rgba(255,255,255,0.075),
-                    rgba(255,255,255,0.035)
-                );
+        gap: 12px;
+    }
 
-            border: 1px solid rgba(255,255,255,0.09);
+    .link-card {
+        position: relative;
 
-            box-shadow:
-                0 8px 25px rgba(0,0,0,0.16);
+        display: flex;
 
-            overflow: hidden;
+        align-items: center;
 
-            transition:
-                transform 0.22s ease,
-                border-color 0.22s ease,
-                background 0.22s ease,
-                box-shadow 0.22s ease;
+        gap: 13px;
 
-            animation: fadeUp 0.6s ease both;
-        }
+        width: 100%;
 
-        .link-card:nth-child(1) {
-            animation-delay: 0.08s;
-        }
+        min-height: 78px;
 
-        .link-card:nth-child(2) {
-            animation-delay: 0.14s;
-        }
+        padding: 13px 14px;
 
-        .link-card:nth-child(3) {
-            animation-delay: 0.20s;
-        }
+        border-radius: 17px;
 
-        .link-card:nth-child(4) {
-            animation-delay: 0.26s;
-        }
+        background:
+            linear-gradient(
+                135deg,
+                rgba(255,255,255,0.075),
+                rgba(255,255,255,0.035)
+            );
 
-        .link-card:nth-child(5) {
-            animation-delay: 0.32s;
-        }
+        border: 1px solid rgba(255,255,255,0.09);
 
-        .link-card:nth-child(6) {
-            animation-delay: 0.38s;
-        }
+        box-shadow:
+            0 8px 25px rgba(0,0,0,0.16);
 
-        .link-card::before {
-            content: "";
+        overflow: hidden;
 
-            position: absolute;
+        transition:
+            transform 0.22s ease,
+            border-color 0.22s ease,
+            background 0.22s ease,
+            box-shadow 0.22s ease;
 
-            left: 0;
-            top: 0;
+        animation: fadeUp 0.6s ease both;
+    }
 
-            width: 3px;
-            height: 100%;
+    .link-card::before {
+        content: "";
 
-            background:
-                linear-gradient(
-                    180deg,
-                    #8b5cf6,
-                    #3b82f6
-                );
+        position: absolute;
 
+        left: 0;
+        top: 0;
+
+        width: 3px;
+        height: 100%;
+
+        background:
+            linear-gradient(
+                180deg,
+                #8b5cf6,
+                #3b82f6
+            );
+
+        opacity: 0;
+
+        transition: opacity 0.2s ease;
+    }
+
+    .link-card:hover {
+        transform: translateY(-3px);
+
+        border-color: rgba(139,92,246,0.35);
+
+        background:
+            linear-gradient(
+                135deg,
+                rgba(124,58,237,0.14),
+                rgba(255,255,255,0.045)
+            );
+
+        box-shadow:
+            0 14px 35px rgba(0,0,0,0.28);
+    }
+
+    .link-card:hover::before {
+        opacity: 1;
+    }
+
+    /* ==============================
+       IKONY OFERT
+       ============================== */
+
+    .link-icon {
+        flex: 0 0 52px;
+
+        width: 52px;
+        height: 52px;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 14px;
+
+        color: #ffffff;
+
+        font-size: 16px;
+
+        font-weight: 800;
+
+        letter-spacing: -0.5px;
+
+        overflow: hidden;
+
+        box-shadow:
+            0 7px 20px rgba(0,0,0,0.25);
+    }
+
+    /* BNP PARIBAS */
+
+    .icon-bnp {
+        background:
+            linear-gradient(
+                135deg,
+                #009c49,
+                #006c36
+            );
+    }
+
+    /* PKO */
+
+    .icon-pko {
+        background:
+            linear-gradient(
+                135deg,
+                #003574,
+                #0064a7
+            );
+    }
+
+    /* NEST */
+
+    .icon-nest {
+        background:
+            linear-gradient(
+                135deg,
+                #005c52,
+                #008f7a
+            );
+    }
+
+    /* MBANK */
+
+    .icon-mbank {
+        background:
+            linear-gradient(
+                135deg,
+                #e51b23,
+                #7d287d,
+                #f6a000
+            );
+    }
+
+    /* UNICREDIT */
+
+    .icon-unicredit {
+        background:
+            linear-gradient(
+                135deg,
+                #e30613,
+                #b3000a
+            );
+    }
+
+    /* ALIOR */
+
+    .icon-alior {
+        background:
+            linear-gradient(
+                135deg,
+                #b88a24,
+                #765100
+            );
+    }
+
+    /* POZOSTAŁE OFERTY */
+
+    .icon-game {
+        background:
+            linear-gradient(
+                135deg,
+                #ec4899,
+                #8b5cf6
+            );
+    }
+
+    .icon-gift {
+        background:
+            linear-gradient(
+                135deg,
+                #f59e0b,
+                #ef4444
+            );
+    }
+
+    .icon-cart {
+        background:
+            linear-gradient(
+                135deg,
+                #06b6d4,
+                #3b82f6
+            );
+    }
+
+    /* ==============================
+       TEKST
+       ============================== */
+
+    .link-content {
+        min-width: 0;
+
+        flex: 1;
+    }
+
+    .link-title {
+        display: block;
+
+        margin-bottom: 4px;
+
+        font-size: 14px;
+
+        font-weight: 700;
+
+        color: #ffffff;
+
+        line-height: 1.3;
+    }
+
+    .link-description {
+        display: block;
+
+        color: #8f8f99;
+
+        font-size: 11px;
+
+        line-height: 1.45;
+    }
+
+    .link-cta {
+        flex-shrink: 0;
+
+        display: inline-flex;
+
+        align-items: center;
+
+        gap: 5px;
+
+        padding: 8px 10px;
+
+        border-radius: 9px;
+
+        color: #ffffff;
+
+        background: rgba(255,255,255,0.075);
+
+        border: 1px solid rgba(255,255,255,0.08);
+
+        font-size: 10px;
+
+        font-weight: 700;
+
+        white-space: nowrap;
+
+        transition:
+            background 0.2s ease,
+            transform 0.2s ease;
+    }
+
+    .link-card:hover .link-cta {
+        background: rgba(139,92,246,0.8);
+
+        transform: translateX(2px);
+    }
+
+    /* ==============================
+       INFORMACJA
+       ============================== */
+
+    .trust-box {
+        display: flex;
+
+        align-items: flex-start;
+
+        gap: 10px;
+
+        margin-top: 24px;
+
+        padding: 14px;
+
+        border-radius: 13px;
+
+        background: rgba(255,255,255,0.025);
+
+        border: 1px solid rgba(255,255,255,0.06);
+
+        color: #71717a;
+
+        font-size: 10px;
+
+        line-height: 1.55;
+    }
+
+    .trust-box i {
+        color: #a78bfa;
+
+        margin-top: 2px;
+    }
+
+    /* ==============================
+       STOPKA
+       ============================== */
+
+    footer {
+        margin-top: 30px;
+
+        padding-top: 20px;
+
+        border-top: 1px solid rgba(255,255,255,0.06);
+
+        text-align: center;
+    }
+
+    .footer-brand {
+        font-size: 12px;
+
+        font-weight: 700;
+
+        color: #a1a1aa;
+
+        margin-bottom: 8px;
+    }
+
+    .footer-copy {
+        color: #52525b;
+
+        font-size: 10px;
+    }
+
+    .affiliate-disclaimer {
+        max-width: 560px;
+
+        margin: 10px auto 0;
+
+        color: #52525b;
+
+        font-size: 9px;
+
+        line-height: 1.55;
+    }
+
+    /* ==============================
+       PRZYCISK GÓRA
+       ============================== */
+
+    .top-button {
+        position: fixed;
+
+        right: 16px;
+        bottom: 16px;
+
+        width: 42px;
+        height: 42px;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        border: 1px solid rgba(255,255,255,0.1);
+
+        border-radius: 50%;
+
+        background: rgba(20,20,27,0.88);
+
+        color: #ffffff;
+
+        cursor: pointer;
+
+        opacity: 0;
+
+        visibility: hidden;
+
+        transform: translateY(10px);
+
+        transition:
+            opacity 0.2s ease,
+            visibility 0.2s ease,
+            transform 0.2s ease;
+
+        backdrop-filter: blur(10px);
+    }
+
+    .top-button.show {
+        opacity: 1;
+
+        visibility: visible;
+
+        transform: translateY(0);
+    }
+
+    .top-button:hover {
+        background: #7c3aed;
+    }
+
+    @keyframes fadeUp {
+
+        from {
             opacity: 0;
 
-            transition: opacity 0.2s ease;
+            transform: translateY(15px);
         }
 
-        .link-card:hover {
-            transform: translateY(-3px);
-
-            border-color: rgba(139,92,246,0.35);
-
-            background:
-                linear-gradient(
-                    135deg,
-                    rgba(124,58,237,0.14),
-                    rgba(255,255,255,0.045)
-                );
-
-            box-shadow:
-                0 14px 35px rgba(0,0,0,0.28);
-        }
-
-        .link-card:hover::before {
+        to {
             opacity: 1;
-        }
-
-        .link-icon {
-            flex: 0 0 49px;
-
-            width: 49px;
-            height: 49px;
-
-            display: flex;
-
-            align-items: center;
-            justify-content: center;
-
-            border-radius: 14px;
-
-            color: #ffffff;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    rgba(139,92,246,0.95),
-                    rgba(59,130,246,0.9)
-                );
-
-            box-shadow:
-                0 7px 20px rgba(124,58,237,0.25);
-
-            font-size: 19px;
-        }
-
-        .link-content {
-            min-width: 0;
-
-            flex: 1;
-        }
-
-        .link-title {
-            display: block;
-
-            margin-bottom: 4px;
-
-            font-size: 14px;
-
-            font-weight: 700;
-
-            color: #ffffff;
-
-            line-height: 1.3;
-        }
-
-        .link-description {
-            display: block;
-
-            color: #8f8f99;
-
-            font-size: 11px;
-
-            line-height: 1.45;
-        }
-
-        .link-cta {
-            flex-shrink: 0;
-
-            display: inline-flex;
-
-            align-items: center;
-
-            gap: 5px;
-
-            padding: 8px 10px;
-
-            border-radius: 9px;
-
-            color: #ffffff;
-
-            background: rgba(255,255,255,0.075);
-
-            border: 1px solid rgba(255,255,255,0.08);
-
-            font-size: 10px;
-
-            font-weight: 700;
-
-            white-space: nowrap;
-
-            transition:
-                background 0.2s ease,
-                transform 0.2s ease;
-        }
-
-        .link-card:hover .link-cta {
-            background: rgba(139,92,246,0.8);
-
-            transform: translateX(2px);
-        }
-
-        .trust-box {
-            display: flex;
-
-            align-items: flex-start;
-
-            gap: 10px;
-
-            margin-top: 18px;
-
-            padding: 14px;
-
-            border-radius: 13px;
-
-            background: rgba(255,255,255,0.025);
-
-            border: 1px solid rgba(255,255,255,0.06);
-
-            color: #71717a;
-
-            font-size: 10px;
-
-            line-height: 1.55;
-        }
-
-        .trust-box i {
-            color: #a78bfa;
-            margin-top: 2px;
-        }
-
-        footer {
-            margin-top: 30px;
-
-            padding-top: 20px;
-
-            border-top: 1px solid rgba(255,255,255,0.06);
-
-            text-align: center;
-        }
-
-        .footer-brand {
-            font-size: 12px;
-
-            font-weight: 700;
-
-            color: #a1a1aa;
-
-            margin-bottom: 8px;
-        }
-
-        .footer-copy {
-            color: #52525b;
-
-            font-size: 10px;
-
-            line-height: 1.6;
-        }
-
-        .affiliate-disclaimer {
-            max-width: 560px;
-
-            margin: 10px auto 0;
-
-            color: #52525b;
-
-            font-size: 9px;
-
-            line-height: 1.55;
-        }
-
-        .top-button {
-            position: fixed;
-
-            right: 16px;
-            bottom: 16px;
-
-            width: 42px;
-            height: 42px;
-
-            display: flex;
-
-            align-items: center;
-            justify-content: center;
-
-            border: 1px solid rgba(255,255,255,0.1);
-
-            border-radius: 50%;
-
-            background: rgba(20,20,27,0.88);
-
-            color: #ffffff;
-
-            cursor: pointer;
-
-            opacity: 0;
-
-            visibility: hidden;
-
-            transform: translateY(10px);
-
-            transition:
-                opacity 0.2s ease,
-                visibility 0.2s ease,
-                transform 0.2s ease;
-
-            backdrop-filter: blur(10px);
-        }
-
-        .top-button.show {
-            opacity: 1;
-
-            visibility: visible;
 
             transform: translateY(0);
         }
 
-        .top-button:hover {
-            background: #7c3aed;
+    }
+
+    @media (min-width: 700px) {
+
+        .page {
+            padding-top: 55px;
         }
 
-        @keyframes fadeUp {
+        .main-logo {
+            width: 110px;
+            height: 110px;
 
-            from {
-                opacity: 0;
-
-                transform: translateY(15px);
-            }
-
-            to {
-                opacity: 1;
-
-                transform: translateY(0);
-            }
-
+            font-size: 44px;
         }
 
-        @media (min-width: 700px) {
-
-            .page {
-                padding-top: 55px;
-            }
-
-            .bank-logo {
-                width: 110px;
-                height: 110px;
-
-                font-size: 44px;
-            }
-
-            .profile h1 {
-                font-size: 29px;
-            }
-
-            .profile p {
-                font-size: 15px;
-            }
-
-            .link-card {
-                min-height: 84px;
-
-                padding: 15px 16px;
-            }
-
-            .link-title {
-                font-size: 15px;
-            }
-
-            .link-description {
-                font-size: 12px;
-            }
-
-            .link-cta {
-                font-size: 11px;
-
-                padding: 9px 12px;
-            }
-
+        .profile h1 {
+            font-size: 29px;
         }
 
-        @media (max-width: 370px) {
-
-            .page {
-                padding-left: 12px;
-                padding-right: 12px;
-            }
-
-            .link-card {
-                gap: 9px;
-
-                padding: 11px;
-            }
-
-            .link-icon {
-                width: 44px;
-                height: 44px;
-
-                flex-basis: 44px;
-
-                border-radius: 12px;
-            }
-
-            .link-cta {
-                display: none;
-            }
-
+        .profile p {
+            font-size: 15px;
         }
 
-        @media (prefers-reduced-motion: reduce) {
+        .link-card {
+            min-height: 84px;
 
-            *,
-            *::before,
-            *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                scroll-behavior: auto !important;
-                transition-duration: 0.01ms !important;
-            }
-
+            padding: 15px 16px;
         }
 
-    </style>
-</head>
+        .link-title {
+            font-size: 15px;
+        }
 
-<body>
+        .link-description {
+            font-size: 12px;
+        }
 
-    <main class="page" id="top">
+    }
 
-        <section class="profile">
+    @media (max-width: 370px) {
 
-            <div class="bank-logo">
-                <i class="fa-solid fa-building-columns"></i>
-            </div>
+        .page {
+            padding-left: 12px;
+            padding-right: 12px;
+        }
 
-            <div class="profile-badge">
-                <i class="fa-solid fa-circle-check"></i>
-                Promocje bankowe online
-            </div>
+        .link-card {
+            gap: 9px;
 
-            <h1>BankiPromoKody</h1>
+            padding: 11px;
+        }
 
-            <p>
-                Sprawdź promocje bankowe, bonusy za założenie konta
-                oraz aktualne oferty dostępne online. Wybierz bank
-                i przejdź do aktualnych warunków promocji.
-            </p>
+        .link-icon {
+            width: 45px;
+            height: 45px;
 
-        </section>
+            flex-basis: 45px;
+
+            font-size: 13px;
+        }
+
+        .link-cta {
+            display: none;
+        }
+
+    }
+
+</style>
+
+</head><body><main class="page" id="top">
 
 
-        <section>
+    <!-- ==============================
+         PROFIL
+         ============================== -->
 
-            <div class="section-title">
-                Promocje bankowe
-            </div>
+    <section class="profile">
 
-            <div class="links">
+        <div class="main-logo">
+
+            <i class="fa-solid fa-tags"></i>
+
+        </div>
 
 
-                <!-- BNP PARIBAS -->
+        <div class="profile-badge">
 
-                <a
-                    href="https://connectorlink.online/a/kRplqCqPOt8ZGW"
-                    target="_blank"
-                    rel="nofollow sponsored noopener noreferrer"
-                    class="link-card"
-                >
+            <i class="fa-solid fa-circle-check"></i>
 
-                    <div class="link-icon">
-                        <i class="fa-solid fa-building-columns"></i>
-                    </div>
+            Najlepsze oferty online
 
-                    <div class="link-content">
+        </div>
 
-                        <span class="link-title">
-                            BNP Paribas
-                        </span>
 
-                        <span class="link-description">
-                            Sprawdź aktualną promocję i warunki
-                            założenia konta.
-                        </span>
+        <h1>BankiPromoKody</h1>
 
-                    </div>
 
-                    <span class="link-cta">
-                        Sprawdź
-                        <i class="fa-solid fa-arrow-right"></i>
+        <p>
+            Sprawdź promocje bankowe, bonusy, gry,
+            rabaty i inne ciekawe oferty dostępne online.
+        </p>
+
+    </section>
+
+
+    <!-- ==============================
+         SEKCJA 1
+         BANKI I PROMOCJE
+         ============================== -->
+
+    <section class="offer-section">
+
+        <div class="section-title">
+
+            <i class="fa-solid fa-building-columns"></i>
+
+            Banki i promocje
+
+        </div>
+
+
+        <div class="links">
+
+
+            <!-- BNP PARIBAS -->
+
+            <a
+                href="https://connectorlink.online/a/kRplqCqPOt8ZGW"
+                target="_blank"
+                rel="nofollow sponsored noopener noreferrer"
+                class="link-card"
+            >
+
+                <div class="link-icon icon-bnp">
+                    BNP
+                </div>
+
+                <div class="link-content">
+
+                    <span class="link-title">
+                        BNP Paribas
                     </span>
 
-                </a>
-
-
-                <!-- PKO BANK POLSKI -->
-
-                <a
-                    href="https://connectorlink.online/a/rkzvAiDmxHNB6g"
-                    target="_blank"
-                    rel="nofollow sponsored noopener noreferrer"
-                    class="link-card"
-                >
-
-                    <div class="link-icon">
-                        <i class="fa-solid fa-building-columns"></i>
-                    </div>
-
-                    <div class="link-content">
-
-                        <span class="link-title">
-                            PKO Bank Polski
-                        </span>
-
-                        <span class="link-description">
-                            Sprawdź aktualną ofertę oraz dostępne
-                            promocje dla nowych klientów.
-                        </span>
-
-                    </div>
-
-                    <span class="link-cta">
-                        Sprawdź
-                        <i class="fa-solid fa-arrow-right"></i>
+                    <span class="link-description">
+                        Sprawdź aktualną promocję oraz
+                        warunki założenia konta.
                     </span>
 
-                </a>
+                </div>
 
+                <span class="link-cta">
 
-                <!-- NEST BANK -->
+                    Sprawdź
 
-                <a
-                    href="https://connectorlink.online/a/yPKDLCLrWXiABgB"
-                    target="_blank"
-                    rel="nofollow sponsored noopener noreferrer"
-                    class="link-card"
-                >
+                    <i class="fa-solid fa-arrow-right"></i>
 
-                    <div class="link-icon">
-                        <i class="fa-solid fa-building-columns"></i>
-                    </div>
-
-                    <div class="link-content">
-
-                        <span class="link-title">
-                            Nest Bank
-                        </span>
-
-                        <span class="link-description">
-                            Sprawdź ofertę konta oraz aktualne
-                            warunki promocji.
-                        </span>
-
-                    </div>
-
-                    <span class="link-cta">
-                        Sprawdź
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </span>
-
-                </a>
-
-
-                <!-- MBANK -->
-
-                <a
-                    href="https://connectorlink.online/a/PNB93f3Km8srgRo"
-                    target="_blank"
-                    rel="nofollow sponsored noopener noreferrer"
-                    class="link-card"
-                >
-
-                    <div class="link-icon">
-                        <i class="fa-solid fa-building-columns"></i>
-                    </div>
-
-                    <div class="link-content">
-
-                        <span class="link-title">
-                            mBank
-                        </span>
-
-                        <span class="link-description">
-                            Zobacz aktualną ofertę oraz warunki
-                            dostępnej promocji.
-                        </span>
-
-                    </div>
-
-                    <span class="link-cta">
-                        Sprawdź
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </span>
-
-                </a>
-
-
-                <!-- UNICREDIT -->
-
-                <a
-                    href="https://connectorlink.online/a/2kLoKi826KuMq8y"
-                    target="_blank"
-                    rel="nofollow sponsored noopener noreferrer"
-                    class="link-card"
-                >
-
-                    <div class="link-icon">
-                        <i class="fa-solid fa-building-columns"></i>
-                    </div>
-
-                    <div class="link-content">
-
-                        <span class="link-title">
-                            UniCredit
-                        </span>
-
-                        <span class="link-description">
-                            Sprawdź aktualną ofertę i szczegóły
-                            dostępnej promocji.
-                        </span>
-
-                    </div>
-
-                    <span class="link-cta">
-                        Sprawdź
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </span>
-
-                </a>
-
-
-                <!-- ALIOR BANK -->
-
-                <a
-                    href="https://connectorlink.online/a/Nkz23ij0xYC0vl5"
-                    target="_blank"
-                    rel="nofollow sponsored noopener noreferrer"
-                    class="link-card"
-                >
-
-                    <div class="link-icon">
-                        <i class="fa-solid fa-building-columns"></i>
-                    </div>
-
-                    <div class="link-content">
-
-                        <span class="link-title">
-                            Alior Bank
-                        </span>
-
-                        <span class="link-description">
-                            Sprawdź aktualną promocję oraz warunki
-                            założenia konta.
-                        </span>
-
-                    </div>
-
-                    <span class="link-cta">
-                        Sprawdź
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </span>
-
-                </a>
-
-            </div>
-
-
-            <div class="trust-box">
-
-                <i class="fa-solid fa-circle-info"></i>
-
-                <span>
-                    Strona zawiera linki afiliacyjne. Właściciel strony
-                    może otrzymywać prowizję za rejestracje lub skorzystanie
-                    z ofert dokonane za pośrednictwem tych linków.
-                    Nie wpływa to na cenę ani warunki oferty dla użytkownika.
-                    Przed skorzystaniem z promocji zapoznaj się z aktualnym
-                    regulaminem na stronie banku.
                 </span>
 
-            </div>
-
-        </section>
+            </a>
 
 
-        <footer>
+            <!-- PKO BANK POLSKI -->
 
-            <div class="footer-brand">
-                © 2026 BankiPromoKody
-            </div>
+            <a
+                href="https://connectorlink.online/a/rkzvAiDmxHNB6g"
+                target="_blank"
+                rel="nofollow sponsored noopener noreferrer"
+                class="link-card"
+            >
 
-            <div class="footer-copy">
-                Wszelkie prawa zastrzeżone.
-            </div>
+                <div class="link-icon icon-pko">
+                    PKO
+                </div>
 
-            <div class="affiliate-disclaimer">
-                Strona ma charakter informacyjny i promocyjny oraz zawiera
-                linki afiliacyjne. Promocje, kwoty bonusów oraz warunki
-                uczestnictwa mogą ulegać zmianie. Aktualne informacje
-                znajdują się na stronach partnerów i banków.
-            </div>
+                <div class="link-content">
 
-        </footer>
+                    <span class="link-title">
+                        PKO Bank Polski
+                    </span>
 
-    </main>
+                    <span class="link-description">
+                        Sprawdź aktualną ofertę oraz
+                        dostępne promocje dla klientów.
+                    </span>
 
+                </div>
 
-    <button
-        class="top-button"
-        id="topButton"
-        aria-label="Wróć na górę"
-        title="Wróć na górę"
-    >
+                <span class="link-cta">
 
-        <i class="fa-solid fa-arrow-up"></i>
+                    Sprawdź
 
-    </button>
+                    <i class="fa-solid fa-arrow-right"></i>
 
+                </span>
 
-    <script>
-
-        const topButton =
-            document.getElementById("topButton");
+            </a>
 
 
-        window.addEventListener("scroll", function () {
+            <!-- NEST BANK -->
 
-            if (window.scrollY > 300) {
+            <a
+                href="https://connectorlink.online/a/yPKDLCLrWXiABgB"
+                target="_blank"
+                rel="nofollow sponsored noopener noreferrer"
+                class="link-card"
+            >
 
-                topButton.classList.add("show");
+                <div class="link-icon icon-nest">
+                    NEST
+                </div>
 
-            } else {
+                <div class="link-content">
 
-                topButton.classList.remove("show");
+                    <span class="link-title">
+                        Nest Bank
+                    </span>
 
-            }
+                    <span class="link-description">
+                        Sprawdź ofertę konta oraz
+                        aktualne warunki promocji.
+                    </span>
+
+                </div>
+
+                <span class="link-cta">
+
+                    Sprawdź
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </span>
+
+            </a>
+
+
+            <!-- MBANK -->
+
+            <a
+                href="https://connectorlink.online/a/PNB93f3Km8srgRo"
+                target="_blank"
+                rel="nofollow sponsored noopener noreferrer"
+                class="link-card"
+            >
+
+                <div class="link-icon icon-mbank">
+                    m
+                </div>
+
+                <div class="link-content">
+
+                    <span class="link-title">
+                        mBank
+                    </span>
+
+                    <span class="link-description">
+                        Zobacz aktualną ofertę oraz
+                        warunki dostępnej promocji.
+                    </span>
+
+                </div>
+
+                <span class="link-cta">
+
+                    Sprawdź
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </span>
+
+            </a>
+
+
+            <!-- UNICREDIT -->
+
+            <a
+                href="https://connectorlink.online/a/2kLoKi826KuMq8y"
+                target="_blank"
+                rel="nofollow sponsored noopener noreferrer"
+                class="link-card"
+            >
+
+                <div class="link-icon icon-unicredit">
+                    U
+                </div>
+
+                <div class="link-content">
+
+                    <span class="link-title">
+                        UniCredit
+                    </span>
+
+                    <span class="link-description">
+                        Sprawdź aktualną ofertę oraz
+                        szczegóły dostępnej promocji.
+                    </span>
+
+                </div>
+
+                <span class="link-cta">
+
+                    Sprawdź
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </span>
+
+            </a>
+
+
+            <!-- ALIOR BANK -->
+
+            <a
+                href="https://connectorlink.online/a/Nkz23ij0xYC0vl5"
+                target="_blank"
+                rel="nofollow sponsored noopener noreferrer"
+                class="link-card"
+            >
+
+                <div class="link-icon icon-alior">
+                    AL
+                </div>
+
+                <div class="link-content">
+
+                    <span class="link-title">
+                        Alior Bank
+                    </span>
+
+                    <span class="link-description">
+                        Sprawdź aktualną promocję oraz
+                        warunki założenia konta.
+                    </span>
+
+                </div>
+
+                <span class="link-cta">
+
+                    Sprawdź
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </span>
+
+            </a>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- ==============================
+         SEKCJA 2
+         GRY
+         ============================== -->
+
+    <section class="offer-section">
+
+        <div class="section-title">
+
+            <i class="fa-solid fa-gamepad"></i>
+
+            Gry i rozrywka
+
+        </div>
+
+
+        <div class="links">
+
+
+            <a
+                href="#"
+                class="link-card"
+            >
+
+                <div class="link-icon icon-game">
+
+                    <i class="fa-solid fa-gamepad"></i>
+
+                </div>
+
+
+                <div class="link-content">
+
+                    <span class="link-title">
+                        Darmowa gra online
+                    </span>
+
+                    <span class="link-description">
+                        Sprawdź ofertę dostępną dla
+                        nowych użytkowników.
+                    </span>
+
+                </div>
+
+
+                <span class="link-cta">
+
+                    Zagraj
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </span>
+
+            </a>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- ==============================
+         SEKCJA 3
+         BONUSY
+         ============================== -->
+
+    <section class="offer-section">
+
+        <div class="section-title">
+
+            <i class="fa-solid fa-gift"></i>
+
+            Bonusy i oferty specjalne
+
+        </div>
+
+
+        <div class="links">
+
+
+            <a
+                href="#"
+                class="link-card"
+            >
+
+                <div class="link-icon icon-gift">
+
+                    <i class="fa-solid fa-gift"></i>
+
+                </div>
+
+
+                <div class="link-content">
+
+                    <span class="link-title">
+                        Darmowy okres próbny
+                    </span>
+
+                    <span class="link-description">
+                        Wypróbuj usługę i sprawdź
+                        dostępne możliwości.
+                    </span>
+
+                </div>
+
+
+                <span class="link-cta">
+
+                    Sprawdź
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </span>
+
+            </a>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- ==============================
+         SEKCJA 4
+         PROMOCJE I RABATY
+         ============================== -->
+
+    <section class="offer-section">
+
+        <div class="section-title">
+
+            <i class="fa-solid fa-cart-shopping"></i>
+
+            Promocje i rabaty
+
+        </div>
+
+
+        <div class="links">
+
+
+            <a
+                href="#"
+                class="link-card"
+            >
+
+                <div class="link-icon icon-cart">
+
+                    <i class="fa-solid fa-cart-shopping"></i>
+
+                </div>
+
+
+                <div class="link-content">
+
+                    <span class="link-title">
+                        Promocje i rabaty
+                    </span>
+
+                    <span class="link-description">
+                        Sprawdź aktualne okazje oraz
+                        dostępne promocje zakupowe.
+                    </span>
+
+                </div>
+
+
+                <span class="link-cta">
+
+                    Zobacz
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </span>
+
+            </a>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- ==============================
+         INFORMACJA AFILIACYJNA
+         ============================== -->
+
+    <div class="trust-box">
+
+        <i class="fa-solid fa-circle-info"></i>
+
+        <span>
+
+            Strona zawiera linki afiliacyjne.
+            Właściciel strony może otrzymywać prowizję
+            za rejestracje lub skorzystanie z ofert
+            dokonane za pośrednictwem tych linków.
+            Aktualne warunki każdej promocji znajdują
+            się na stronie partnera.
+
+        </span>
+
+    </div>
+
+
+    <!-- ==============================
+         STOPKA
+         ============================== -->
+
+    <footer>
+
+        <div class="footer-brand">
+
+            © 2026 BankiPromoKody
+
+        </div>
+
+
+        <div class="footer-copy">
+
+            Wszelkie prawa zastrzeżone.
+
+        </div>
+
+
+        <div class="affiliate-disclaimer">
+
+            Strona ma charakter informacyjny i promocyjny
+            oraz może zawierać linki afiliacyjne. Promocje,
+            bonusy oraz warunki uczestnictwa mogą ulegać zmianie.
+            Przed skorzystaniem z oferty należy zapoznać się
+            z aktualnymi warunkami dostępnymi u partnera.
+
+        </div>
+
+    </footer>
+
+</main>
+
+
+<!-- ==============================
+     PRZYCISK GÓRA
+     ============================== -->
+
+<button
+    class="top-button"
+    id="topButton"
+    aria-label="Wróć na górę"
+    title="Wróć na górę"
+>
+
+    <i class="fa-solid fa-arrow-up"></i>
+
+</button>
+
+
+<script>
+
+    const topButton =
+        document.getElementById("topButton");
+
+
+    window.addEventListener("scroll", function () {
+
+        if (window.scrollY > 300) {
+
+            topButton.classList.add("show");
+
+        } else {
+
+            topButton.classList.remove("show");
+
+        }
+
+    });
+
+
+    topButton.addEventListener("click", function () {
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+    });
+
+
+    const offerLinks =
+        document.querySelectorAll(".link-card");
+
+
+    offerLinks.forEach(function (link, index) {
+
+        link.addEventListener("click", function () {
+
+            console.log(
+                "Kliknięto ofertę numer:",
+                index + 1
+            );
 
         });
 
+    });
 
-        topButton.addEventListener("click", function () {
-
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
-
-        });
-
-
-        const offerLinks =
-            document.querySelectorAll(".link-card");
-
-
-        offerLinks.forEach(function (link, index) {
-
-            link.addEventListener("click", function () {
-
-                console.log(
-                    "Kliknięto ofertę bankową numer:",
-                    index + 1
-                );
-
-            });
-
-        });
-
-    </script>
+</script>
 
 </body>
-</html>
+                    </html>
