@@ -4,20 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Twoje Oferty — Najlepsze promocje i okazje</title>
+    <title>BankiPromoKody — Promocje bankowe i bonusy</title>
 
     <meta name="description"
-          content="Sprawdź wybrane promocje, bonusy, okazje i oferty dostępne online.">
+          content="Sprawdź promocje bankowe, bonusy za założenie konta oraz aktualne oferty banków.">
 
-    <!-- ==============================
-         FONT AWESOME
-         ============================== -->
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-    <!-- ==============================
-         GOOGLE FONT
-         ============================== -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -25,10 +19,6 @@
           rel="stylesheet">
 
     <style>
-
-        /* =========================================
-           RESET
-           ========================================= */
 
         * {
             margin: 0;
@@ -42,9 +32,7 @@
 
         body {
             min-height: 100vh;
-
             font-family: "Inter", sans-serif;
-
             color: #ffffff;
 
             background:
@@ -72,10 +60,6 @@
             font-family: inherit;
         }
 
-        /* =========================================
-           BACKGROUND EFFECT
-           ========================================= */
-
         body::before {
             content: "";
 
@@ -100,10 +84,6 @@
             z-index: -1;
         }
 
-        /* =========================================
-           MAIN CONTAINER
-           ========================================= */
-
         .page {
             width: 100%;
             max-width: 680px;
@@ -113,10 +93,6 @@
             padding: 35px 18px 30px;
         }
 
-        /* =========================================
-           PROFILE
-           ========================================= */
-
         .profile {
             text-align: center;
 
@@ -125,34 +101,33 @@
             animation: fadeUp 0.7s ease both;
         }
 
-        /* =========================================
-           AVATAR
-           
-           ZMIEŃ:
-           images/avatar.jpg
-
-           na ścieżkę swojego zdjęcia.
-           Możesz również użyć URL:
-           https://example.com/avatar.jpg
-           ========================================= */
-
-        .avatar {
+        .bank-logo {
             width: 96px;
             height: 96px;
 
             margin: 0 auto 16px;
 
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
             border-radius: 50%;
 
-            object-fit: cover;
-
-            display: block;
+            background:
+                linear-gradient(
+                    135deg,
+                    #8b5cf6,
+                    #3b82f6
+                );
 
             border: 3px solid rgba(255,255,255,0.85);
 
             box-shadow:
                 0 0 0 5px rgba(124,58,237,0.18),
                 0 10px 35px rgba(0,0,0,0.45);
+
+            font-size: 38px;
         }
 
         .profile h1 {
@@ -191,7 +166,6 @@
 
         .profile-badge i {
             font-size: 10px;
-
             color: #a78bfa;
         }
 
@@ -206,55 +180,6 @@
 
             line-height: 1.6;
         }
-
-        /* =========================================
-           SOCIAL ICONS
-           ========================================= */
-
-        .socials {
-            display: flex;
-
-            justify-content: center;
-
-            gap: 10px;
-
-            margin-top: 18px;
-        }
-
-        .social {
-            width: 40px;
-            height: 40px;
-
-            display: flex;
-
-            align-items: center;
-            justify-content: center;
-
-            border-radius: 50%;
-
-            color: #c4c4cc;
-
-            background: rgba(255,255,255,0.045);
-
-            border: 1px solid rgba(255,255,255,0.08);
-
-            transition:
-                transform 0.2s ease,
-                background 0.2s ease,
-                color 0.2s ease;
-        }
-
-        .social:hover {
-            transform: translateY(-3px);
-
-            color: #ffffff;
-
-            background: rgba(124,58,237,0.25);
-        }
-
-        /* =========================================
-           SECTION TITLE
-           ========================================= */
 
         .section-title {
             display: flex;
@@ -284,10 +209,6 @@
 
             background: #52525b;
         }
-
-        /* =========================================
-           LINKS
-           ========================================= */
 
         .links {
             display: flex;
@@ -353,6 +274,14 @@
             animation-delay: 0.26s;
         }
 
+        .link-card:nth-child(5) {
+            animation-delay: 0.32s;
+        }
+
+        .link-card:nth-child(6) {
+            animation-delay: 0.38s;
+        }
+
         .link-card::before {
             content: "";
 
@@ -364,11 +293,12 @@
             width: 3px;
             height: 100%;
 
-            background: linear-gradient(
-                180deg,
-                #8b5cf6,
-                #3b82f6
-            );
+            background:
+                linear-gradient(
+                    180deg,
+                    #8b5cf6,
+                    #3b82f6
+                );
 
             opacity: 0;
 
@@ -394,10 +324,6 @@
         .link-card:hover::before {
             opacity: 1;
         }
-
-        /* =========================================
-           ICON
-           ========================================= */
 
         .link-icon {
             flex: 0 0 49px;
@@ -426,10 +352,6 @@
 
             font-size: 19px;
         }
-
-        /* =========================================
-           LINK TEXT
-           ========================================= */
 
         .link-content {
             min-width: 0;
@@ -460,10 +382,6 @@
 
             line-height: 1.45;
         }
-
-        /* =========================================
-           CTA
-           ========================================= */
 
         .link-cta {
             flex-shrink: 0;
@@ -501,10 +419,6 @@
             transform: translateX(2px);
         }
 
-        /* =========================================
-           TRUST BOX
-           ========================================= */
-
         .trust-box {
             display: flex;
 
@@ -530,14 +444,9 @@
         }
 
         .trust-box i {
-            color: #71717a;
-
+            color: #a78bfa;
             margin-top: 2px;
         }
-
-        /* =========================================
-           FOOTER
-           ========================================= */
 
         footer {
             margin-top: 30px;
@@ -578,10 +487,6 @@
 
             line-height: 1.55;
         }
-
-        /* =========================================
-           SCROLL TO TOP
-           ========================================= */
 
         .top-button {
             position: fixed;
@@ -633,10 +538,6 @@
             background: #7c3aed;
         }
 
-        /* =========================================
-           ANIMATIONS
-           ========================================= */
-
         @keyframes fadeUp {
 
             from {
@@ -653,19 +554,17 @@
 
         }
 
-        /* =========================================
-           DESKTOP
-           ========================================= */
-
         @media (min-width: 700px) {
 
             .page {
                 padding-top: 55px;
             }
 
-            .avatar {
+            .bank-logo {
                 width: 110px;
                 height: 110px;
+
+                font-size: 44px;
             }
 
             .profile h1 {
@@ -698,10 +597,6 @@
 
         }
 
-        /* =========================================
-           VERY SMALL PHONES
-           ========================================= */
-
         @media (max-width: 370px) {
 
             .page {
@@ -730,10 +625,6 @@
 
         }
 
-        /* =========================================
-           REDUCED MOTION
-           ========================================= */
-
         @media (prefers-reduced-motion: reduce) {
 
             *,
@@ -750,345 +641,258 @@
     </style>
 </head>
 
-
 <body>
-
-    <!-- =========================================
-         GŁÓWNA ZAWARTOŚĆ
-         ========================================= -->
 
     <main class="page" id="top">
 
-
-        <!-- =====================================
-             PROFIL
-             ===================================== -->
-
         <section class="profile">
 
-            <!--
-                ==================================
-                TWOJE ZDJĘCIE
-
-                ZMIEŃ:
-                images/avatar.jpg
-
-                np.:
-                images/moje-zdjecie.jpg
-
-                albo:
-                https://twojadomena.pl/avatar.jpg
-                ==================================
-            -->
-
-            <img
-                class="avatar"
-                src="images/avatar.jpg"
-                alt="Zdjęcie profilowe"
-            >
-
-
-            <!-- Mały badge nad nazwą -->
+            <div class="bank-logo">
+                <i class="fa-solid fa-building-columns"></i>
+            </div>
 
             <div class="profile-badge">
-
                 <i class="fa-solid fa-circle-check"></i>
-
-                Najlepsze oferty online
-
+                Promocje bankowe online
             </div>
 
-
-            <!--
-                ==================================
-                TWOJA NAZWA / MARKA
-
-                ZMIEŃ TEN TEKST
-                ==================================
-            -->
-
-            <h1>Twoja Nazwa</h1>
-
-
-            <!--
-                ==================================
-                TWOJE BIO
-
-                ZMIEŃ TEN TEKST
-                ==================================
-            -->
+            <h1>BankiPromoKody</h1>
 
             <p>
-                Sprawdź wybrane promocje, bonusy i ciekawe
-                oferty dostępne online. Wybierz ofertę,
-                która najbardziej Ci odpowiada.
+                Sprawdź promocje bankowe, bonusy za założenie konta
+                oraz aktualne oferty dostępne online. Wybierz bank
+                i przejdź do aktualnych warunków promocji.
             </p>
-
-
-            <!-- =================================
-                 SOCIAL MEDIA
-                 ================================= -->
-
-            <div class="socials">
-
-                <!-- ZMIEŃ LINK -->
-
-                <a
-                    href="https://instagram.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="social"
-                    aria-label="Instagram"
-                >
-                    <i class="fa-brands fa-instagram"></i>
-                </a>
-
-
-                <!-- ZMIEŃ LINK -->
-
-                <a
-                    href="https://facebook.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="social"
-                    aria-label="Facebook"
-                >
-                    <i class="fa-brands fa-facebook-f"></i>
-                </a>
-
-
-                <!-- ZMIEŃ LINK -->
-
-                <a
-                    href="https://tiktok.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="social"
-                    aria-label="TikTok"
-                >
-                    <i class="fa-brands fa-tiktok"></i>
-                </a>
-
-            </div>
 
         </section>
 
 
-        <!-- =====================================
-             OFERTY
-             ===================================== -->
-
         <section>
 
             <div class="section-title">
-                Polecane oferty
+                Promocje bankowe
             </div>
-
 
             <div class="links">
 
 
-                <!-- =================================
-                     OFERTA 1 — BANK
-                     ================================= -->
-
-                <!--
-                    WAŻNE:
-
-                    W href="" wklej swój LINK MYLEAD.
-
-                    Przykład:
-
-                    href="https://link.mylead.global/xxxxx"
-                -->
+                <!-- BNP PARIBAS -->
 
                 <a
-                    href="https://TWOJ-LINK-MYLEAD-1"
+                    href="https://connectorlink.online/a/kRplqCqPOt8ZGW"
                     target="_blank"
                     rel="nofollow sponsored noopener noreferrer"
                     class="link-card"
                 >
 
                     <div class="link-icon">
-
                         <i class="fa-solid fa-building-columns"></i>
-
                     </div>
-
 
                     <div class="link-content">
 
                         <span class="link-title">
-                            Bonus za założenie konta
+                            BNP Paribas
                         </span>
 
                         <span class="link-description">
-                            Sprawdź aktualną promocję bankową
-                            i dostępne korzyści.
+                            Sprawdź aktualną promocję i warunki
+                            założenia konta.
                         </span>
 
                     </div>
 
-
                     <span class="link-cta">
-
-                        Sprawdź ofertę
-
+                        Sprawdź
                         <i class="fa-solid fa-arrow-right"></i>
-
                     </span>
 
                 </a>
 
 
-
-                <!-- =================================
-                     OFERTA 2 — GRA
-                     ================================= -->
+                <!-- PKO BANK POLSKI -->
 
                 <a
-                    href="https://TWOJ-LINK-MYLEAD-2"
+                    href="https://connectorlink.online/a/rkzvAiDmxHNB6g"
                     target="_blank"
                     rel="nofollow sponsored noopener noreferrer"
                     class="link-card"
                 >
 
                     <div class="link-icon">
-
-                        <i class="fa-solid fa-gamepad"></i>
-
+                        <i class="fa-solid fa-building-columns"></i>
                     </div>
-
 
                     <div class="link-content">
 
                         <span class="link-title">
-                            Darmowa gra online
+                            PKO Bank Polski
                         </span>
 
                         <span class="link-description">
-                            Zarejestruj się i sprawdź,
-                            co czeka na nowych użytkowników.
+                            Sprawdź aktualną ofertę oraz dostępne
+                            promocje dla nowych klientów.
                         </span>
 
                     </div>
 
-
                     <span class="link-cta">
-
-                        Zagraj teraz
-
+                        Sprawdź
                         <i class="fa-solid fa-arrow-right"></i>
-
                     </span>
 
                 </a>
 
 
-
-                <!-- =================================
-                     OFERTA 3 — OKRES PRÓBNY
-                     ================================= -->
+                <!-- NEST BANK -->
 
                 <a
-                    href="https://TWOJ-LINK-MYLEAD-3"
+                    href="https://connectorlink.online/a/yPKDLCLrWXiABgB"
                     target="_blank"
                     rel="nofollow sponsored noopener noreferrer"
                     class="link-card"
                 >
 
                     <div class="link-icon">
-
-                        <i class="fa-solid fa-gift"></i>
-
+                        <i class="fa-solid fa-building-columns"></i>
                     </div>
-
 
                     <div class="link-content">
 
                         <span class="link-title">
-                            Darmowy okres próbny
+                            Nest Bank
                         </span>
 
                         <span class="link-description">
-                            Wypróbuj usługę i poznaj jej
-                            możliwości bez dodatkowych kosztów.
+                            Sprawdź ofertę konta oraz aktualne
+                            warunki promocji.
                         </span>
 
                     </div>
 
-
                     <span class="link-cta">
-
-                        Odbierz bonus
-
+                        Sprawdź
                         <i class="fa-solid fa-arrow-right"></i>
-
                     </span>
 
                 </a>
 
 
-
-                <!-- =================================
-                     OFERTA 4 — E-COMMERCE
-                     ================================= -->
+                <!-- MBANK -->
 
                 <a
-                    href="https://TWOJ-LINK-MYLEAD-4"
+                    href="https://connectorlink.online/a/PNB93f3Km8srgRo"
                     target="_blank"
                     rel="nofollow sponsored noopener noreferrer"
                     class="link-card"
                 >
 
                     <div class="link-icon">
-
-                        <i class="fa-solid fa-cart-shopping"></i>
-
+                        <i class="fa-solid fa-building-columns"></i>
                     </div>
-
 
                     <div class="link-content">
 
                         <span class="link-title">
-                            Promocje i rabaty
+                            mBank
                         </span>
 
                         <span class="link-description">
-                            Sprawdź aktualne okazje oraz
-                            dostępne promocje zakupowe.
+                            Zobacz aktualną ofertę oraz warunki
+                            dostępnej promocji.
                         </span>
 
                     </div>
 
-
                     <span class="link-cta">
-
-                        Zobacz okazję
-
+                        Sprawdź
                         <i class="fa-solid fa-arrow-right"></i>
-
                     </span>
 
                 </a>
 
+
+                <!-- UNICREDIT -->
+
+                <a
+                    href="https://connectorlink.online/a/2kLoKi826KuMq8y"
+                    target="_blank"
+                    rel="nofollow sponsored noopener noreferrer"
+                    class="link-card"
+                >
+
+                    <div class="link-icon">
+                        <i class="fa-solid fa-building-columns"></i>
+                    </div>
+
+                    <div class="link-content">
+
+                        <span class="link-title">
+                            UniCredit
+                        </span>
+
+                        <span class="link-description">
+                            Sprawdź aktualną ofertę i szczegóły
+                            dostępnej promocji.
+                        </span>
+
+                    </div>
+
+                    <span class="link-cta">
+                        Sprawdź
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </span>
+
+                </a>
+
+
+                <!-- ALIOR BANK -->
+
+                <a
+                    href="https://connectorlink.online/a/Nkz23ij0xYC0vl5"
+                    target="_blank"
+                    rel="nofollow sponsored noopener noreferrer"
+                    class="link-card"
+                >
+
+                    <div class="link-icon">
+                        <i class="fa-solid fa-building-columns"></i>
+                    </div>
+
+                    <div class="link-content">
+
+                        <span class="link-title">
+                            Alior Bank
+                        </span>
+
+                        <span class="link-description">
+                            Sprawdź aktualną promocję oraz warunki
+                            założenia konta.
+                        </span>
+
+                    </div>
+
+                    <span class="link-cta">
+                        Sprawdź
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </span>
+
+                </a>
 
             </div>
 
-
-            <!-- =====================================
-                 INFORMACJA O LINKACH AFILIACYJNYCH
-                 ===================================== -->
 
             <div class="trust-box">
 
                 <i class="fa-solid fa-circle-info"></i>
 
                 <span>
-                    Strona zawiera linki afiliacyjne.
-                    Właściciel strony może otrzymywać prowizję
-                    za zakupy lub rejestracje dokonane za ich
-                    pośrednictwem.
+                    Strona zawiera linki afiliacyjne. Właściciel strony
+                    może otrzymywać prowizję za rejestracje lub skorzystanie
+                    z ofert dokonane za pośrednictwem tych linków.
+                    Nie wpływa to na cenę ani warunki oferty dla użytkownika.
+                    Przed skorzystaniem z promocji zapoznaj się z aktualnym
+                    regulaminem na stronie banku.
                 </span>
 
             </div>
@@ -1096,40 +900,27 @@
         </section>
 
 
-        <!-- =====================================
-             STOPKA
-             ===================================== -->
-
         <footer>
 
-            <!-- ZMIEŃ NA SWOJĄ NAZWĘ -->
-
             <div class="footer-brand">
-                © 2026 Twoja Nazwa
+                © 2026 BankiPromoKody
             </div>
-
 
             <div class="footer-copy">
                 Wszelkie prawa zastrzeżone.
             </div>
 
-
             <div class="affiliate-disclaimer">
-                Strona zawiera linki afiliacyjne. Właściciel strony
-                może otrzymywać prowizję za zakupy lub rejestracje
-                dokonane za ich pośrednictwem. Korzystanie z ofert
-                odbywa się na zasadach określonych przez ich
-                właścicieli.
+                Strona ma charakter informacyjny i promocyjny oraz zawiera
+                linki afiliacyjne. Promocje, kwoty bonusów oraz warunki
+                uczestnictwa mogą ulegać zmianie. Aktualne informacje
+                znajdują się na stronach partnerów i banków.
             </div>
 
         </footer>
 
     </main>
 
-
-    <!-- =========================================
-         PRZYCISK POWROTU NA GÓRĘ
-         ========================================= -->
 
     <button
         class="top-button"
@@ -1143,15 +934,7 @@
     </button>
 
 
-    <!-- =========================================
-         JAVASCRIPT
-         ========================================= -->
-
     <script>
-
-        /* ========================================
-           PRZYCISK "WRÓĆ NA GÓRĘ"
-           ======================================== */
 
         const topButton =
             document.getElementById("topButton");
@@ -1182,13 +965,6 @@
         });
 
 
-        /* ========================================
-           PROSTE ŚLEDZENIE KLIKNIĘĆ
-           
-           Możesz później podłączyć tutaj
-           Google Analytics / Pixel / inne narzędzie.
-           ======================================== */
-
         const offerLinks =
             document.querySelectorAll(".link-card");
 
@@ -1198,7 +974,7 @@
             link.addEventListener("click", function () {
 
                 console.log(
-                    "Kliknięto ofertę numer:",
+                    "Kliknięto ofertę bankową numer:",
                     index + 1
                 );
 
@@ -1209,4 +985,4 @@
     </script>
 
 </body>
-  </html>
+</html>
