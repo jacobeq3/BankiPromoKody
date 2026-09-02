@@ -1,911 +1,3342 @@
-<!DOCTYPE html><html lang="pl">
+<!DOCTYPE html>
+<html lang="pl">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>BankiPromoKody — Promocje, bonusy i okazje</title>
 
-<meta name="description"
-      content="Sprawdź promocje bankowe, bonusy, karty, płatności i inne ciekawe oferty dostępne online.">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-<!-- ==============================
-     FONT AWESOME
-     ============================== -->
+    <title>
+        BankiPromoKody — Promocje bankowe i bonusy
+    </title>
 
-<link rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <meta
+        name="description"
+        content="Porównaj wybrane promocje bankowe, konta i karty. Sprawdź najważniejsze warunki przed przejściem do oferty."
+    >
 
-<!-- ==============================
-     GOOGLE FONT
-     ============================== -->
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
+    <style>
 
-<link rel="preconnect"
-      href="https://fonts.gstatic.com"
-      crossorigin>
+        /* =========================================
+           RESET
+           ========================================= */
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet">
-
-
-<style>
-
-    /* =========================================
-       RESET
-       ========================================= */
-
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
-    html {
-        scroll-behavior: smooth;
-    }
-
-    body {
-        min-height: 100vh;
-
-        font-family: "Inter", sans-serif;
-
-        color: #ffffff;
-
-        background:
-            radial-gradient(
-                circle at 50% 0%,
-                rgba(124, 58, 237, 0.25),
-                transparent 35%
-            ),
-            radial-gradient(
-                circle at 0% 100%,
-                rgba(37, 99, 235, 0.15),
-                transparent 30%
-            ),
-            #08080d;
-
-        overflow-x: hidden;
-    }
-
-    a {
-        color: inherit;
-        text-decoration: none;
-    }
-
-    button {
-        font-family: inherit;
-    }
-
-
-    /* =========================================
-       BACKGROUND EFFECT
-       ========================================= */
-
-    body::before {
-        content: "";
-
-        position: fixed;
-
-        width: 400px;
-        height: 400px;
-
-        top: -200px;
-        left: 50%;
-
-        transform: translateX(-50%);
-
-        background: rgba(124, 58, 237, 0.18);
-
-        filter: blur(100px);
-
-        border-radius: 50%;
-
-        pointer-events: none;
-
-        z-index: -1;
-    }
-
-
-    /* =========================================
-       MAIN CONTAINER
-       ========================================= */
-
-    .page {
-        width: 100%;
-        max-width: 680px;
-
-        margin: 0 auto;
-
-        padding: 35px 18px 30px;
-    }
-
-
-    /* =========================================
-       PROFILE
-       ========================================= */
-
-    .profile {
-        text-align: center;
-
-        margin-bottom: 28px;
-
-        animation: fadeUp 0.7s ease both;
-    }
-
-
-    /* =========================================
-       LOGO
-       ========================================= */
-
-    .avatar {
-        width: 96px;
-        height: 96px;
-
-        margin: 0 auto 16px;
-
-        border-radius: 50%;
-
-        display: flex;
-
-        align-items: center;
-        justify-content: center;
-
-        background:
-            linear-gradient(
-                135deg,
-                #8b5cf6,
-                #3b82f6
-            );
-
-        border: 3px solid rgba(255,255,255,0.85);
-
-        box-shadow:
-            0 0 0 5px rgba(124,58,237,0.18),
-            0 10px 35px rgba(0,0,0,0.45);
-
-        color: #ffffff;
-
-        font-size: 38px;
-    }
-
-
-    .profile h1 {
-        font-size: 25px;
-
-        font-weight: 800;
-
-        letter-spacing: -0.5px;
-
-        margin-bottom: 8px;
-    }
-
-
-    .profile-badge {
-        display: inline-flex;
-
-        align-items: center;
-
-        gap: 6px;
-
-        padding: 6px 11px;
-
-        margin-bottom: 12px;
-
-        border-radius: 999px;
-
-        background: rgba(124,58,237,0.12);
-
-        border: 1px solid rgba(167,139,250,0.22);
-
-        color: #c4b5fd;
-
-        font-size: 12px;
-
-        font-weight: 600;
-    }
-
-
-    .profile-badge i {
-        font-size: 10px;
-
-        color: #a78bfa;
-    }
-
-
-    .profile p {
-        max-width: 480px;
-
-        margin: 0 auto;
-
-        color: #a1a1aa;
-
-        font-size: 14px;
-
-        line-height: 1.6;
-    }
-
-
-    /* =========================================
-       SECTION
-       ========================================= */
-
-    .offer-section {
-        margin-top: 30px;
-    }
-
-    .offer-section:first-of-type {
-        margin-top: 0;
-    }
-
-
-    .section-title {
-        display: flex;
-
-        align-items: center;
-
-        gap: 10px;
-
-        margin: 0 3px 12px;
-
-        color: #71717a;
-
-        font-size: 11px;
-
-        font-weight: 700;
-
-        text-transform: uppercase;
-
-        letter-spacing: 1.5px;
-    }
-
-
-    .section-title::before {
-        content: "";
-
-        width: 22px;
-        height: 1px;
-
-        background: #52525b;
-    }
-
-
-    .section-title i {
-        color: #a78bfa;
-    }
-
-
-    /* =========================================
-       LINKS
-       ========================================= */
-
-    .links {
-        display: flex;
-
-        flex-direction: column;
-
-        gap: 12px;
-    }
-
-
-    .link-card {
-        position: relative;
-
-        display: flex;
-
-        align-items: center;
-
-        gap: 13px;
-
-        width: 100%;
-
-        min-height: 78px;
-
-        padding: 13px 14px;
-
-        border-radius: 17px;
-
-        background:
-            linear-gradient(
-                135deg,
-                rgba(255,255,255,0.075),
-                rgba(255,255,255,0.035)
-            );
-
-        border: 1px solid rgba(255,255,255,0.09);
-
-        box-shadow:
-            0 8px 25px rgba(0,0,0,0.16);
-
-        overflow: hidden;
-
-        transition:
-            transform 0.22s ease,
-            border-color 0.22s ease,
-            background 0.22s ease,
-            box-shadow 0.22s ease;
-
-        animation: fadeUp 0.6s ease both;
-    }
-
-
-    .link-card::before {
-        content: "";
-
-        position: absolute;
-
-        left: 0;
-        top: 0;
-
-        width: 3px;
-        height: 100%;
-
-        background:
-            linear-gradient(
-                180deg,
-                #8b5cf6,
-                #3b82f6
-            );
-
-        opacity: 0;
-
-        transition: opacity 0.2s ease;
-    }
-
-
-    .link-card:hover {
-        transform: translateY(-3px);
-
-        border-color: rgba(139,92,246,0.35);
-
-        background:
-            linear-gradient(
-                135deg,
-                rgba(124,58,237,0.14),
-                rgba(255,255,255,0.045)
-            );
-
-        box-shadow:
-            0 14px 35px rgba(0,0,0,0.28);
-    }
-
-
-    .link-card:hover::before {
-        opacity: 1;
-    }
-
-
-    /* =========================================
-       ICON
-       ========================================= */
-
-    .link-icon {
-        flex: 0 0 49px;
-
-        width: 49px;
-        height: 49px;
-
-        display: flex;
-
-        align-items: center;
-        justify-content: center;
-
-        border-radius: 14px;
-
-        color: #ffffff;
-
-        box-shadow:
-            0 7px 20px rgba(0,0,0,0.25);
-
-        font-size: 14px;
-
-        font-weight: 800;
-
-        overflow: hidden;
-    }
-
-
-    /* BANKI */
-
-    .icon-bnp {
-        background:
-            linear-gradient(
-                135deg,
-                #009c49,
-                #006b35
-            );
-    }
-
-
-    .icon-pko {
-        background:
-            linear-gradient(
-                135deg,
-                #003b73,
-                #0066a6
-            );
-    }
-
-
-    .icon-nest {
-        background:
-            linear-gradient(
-                135deg,
-                #00695c,
-                #009688
-            );
-    }
-
-
-    .icon-mbank {
-        background:
-            linear-gradient(
-                135deg,
-                #e30613,
-                #8e1b87
-            );
-    }
-
-
-    .icon-unicredit {
-        background:
-            linear-gradient(
-                135deg,
-                #e30613,
-                #a00009
-            );
-    }
-
-
-    .icon-alior {
-        background:
-            linear-gradient(
-                135deg,
-                #c29a3a,
-                #765000
-            );
-    }
-
-
-    /* AXI */
-
-    .icon-axi {
-        background:
-            linear-gradient(
-                135deg,
-                #e30613,
-                #7d0000
-            );
-
-        font-size: 13px;
-    }
-
-
-    /* POZOSTAŁE */
-
-    .icon-game {
-        background:
-            linear-gradient(
-                135deg,
-                #ec4899,
-                #8b5cf6
-            );
-
-        font-size: 19px;
-    }
-
-
-    .icon-gift {
-        background:
-            linear-gradient(
-                135deg,
-                #f59e0b,
-                #ef4444
-            );
-
-        font-size: 19px;
-    }
-
-
-    .icon-cart {
-        background:
-            linear-gradient(
-                135deg,
-                #06b6d4,
-                #3b82f6
-            );
-
-        font-size: 19px;
-    }
-
-
-    /* =========================================
-       LINK TEXT
-       ========================================= */
-
-    .link-content {
-        min-width: 0;
-
-        flex: 1;
-    }
-
-
-    .link-title {
-        display: block;
-
-        margin-bottom: 4px;
-
-        font-size: 14px;
-
-        font-weight: 700;
-
-        color: #ffffff;
-
-        line-height: 1.3;
-    }
-
-
-    .link-description {
-        display: block;
-
-        color: #8f8f99;
-
-        font-size: 11px;
-
-        line-height: 1.45;
-    }
-
-
-    /* =========================================
-       CTA
-       ========================================= */
-
-    .link-cta {
-        flex-shrink: 0;
-
-        display: inline-flex;
-
-        align-items: center;
-
-        gap: 5px;
-
-        padding: 8px 10px;
-
-        border-radius: 9px;
-
-        color: #ffffff;
-
-        background: rgba(255,255,255,0.075);
-
-        border: 1px solid rgba(255,255,255,0.08);
-
-        font-size: 10px;
-
-        font-weight: 700;
-
-        white-space: nowrap;
-
-        transition:
-            background 0.2s ease,
-            transform 0.2s ease;
-    }
-
-
-    .link-card:hover .link-cta {
-        background: rgba(139,92,246,0.8);
-
-        transform: translateX(2px);
-    }
-
-
-    /* =========================================
-       TRUST BOX
-       ========================================= */
-
-    .trust-box {
-        display: flex;
-
-        align-items: flex-start;
-
-        gap: 10px;
-
-        margin-top: 24px;
-
-        padding: 14px;
-
-        border-radius: 13px;
-
-        background: rgba(255,255,255,0.025);
-
-        border: 1px solid rgba(255,255,255,0.06);
-
-        color: #71717a;
-
-        font-size: 10px;
-
-        line-height: 1.55;
-    }
-
-
-    .trust-box i {
-        color: #71717a;
-
-        margin-top: 2px;
-    }
-
-
-    /* =========================================
-       FOOTER
-       ========================================= */
-
-    footer {
-        margin-top: 30px;
-
-        padding-top: 20px;
-
-        border-top: 1px solid rgba(255,255,255,0.06);
-
-        text-align: center;
-    }
-
-
-    .footer-brand {
-        font-size: 12px;
-
-        font-weight: 700;
-
-        color: #a1a1aa;
-
-        margin-bottom: 8px;
-    }
-
-
-    .footer-copy {
-        color: #52525b;
-
-        font-size: 10px;
-
-        line-height: 1.6;
-    }
-
-
-    .affiliate-disclaimer {
-        max-width: 560px;
-
-        margin: 10px auto 0;
-
-        color: #52525b;
-
-        font-size: 9px;
-
-        line-height: 1.55;
-    }
-
-
-    /* =========================================
-       TOP BUTTON
-       ========================================= */
-
-    .top-button {
-        position: fixed;
-
-        right: 16px;
-        bottom: 16px;
-
-        width: 42px;
-        height: 42px;
-
-        display: flex;
-
-        align-items: center;
-        justify-content: center;
-
-        border: 1px solid rgba(255,255,255,0.1);
-
-        border-radius: 50%;
-
-        background: rgba(20,20,27,0.88);
-
-        color: #ffffff;
-
-        cursor: pointer;
-
-        opacity: 0;
-
-        visibility: hidden;
-
-        transform: translateY(10px);
-
-        transition:
-            opacity 0.2s ease,
-            visibility 0.2s ease,
-            transform 0.2s ease;
-
-        backdrop-filter: blur(10px);
-    }
-
-
-    .top-button.show {
-        opacity: 1;
-
-        visibility: visible;
-
-        transform: translateY(0);
-    }
-
-
-    .top-button:hover {
-        background: #7c3aed;
-    }
-
-
-    /* =========================================
-       ANIMATION
-       ========================================= */
-
-    @keyframes fadeUp {
-
-        from {
-            opacity: 0;
-
-            transform: translateY(15px);
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        to {
-            opacity: 1;
 
-            transform: translateY(0);
+        html {
+            scroll-behavior: smooth;
         }
 
-    }
+
+        body {
+
+            min-height: 100vh;
+
+            font-family:
+                Inter,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                sans-serif;
+
+            color: #ffffff;
+
+            background:
+
+                radial-gradient(
+                    circle at 50% -10%,
+                    rgba(124, 58, 237, 0.30),
+                    transparent 35%
+                ),
+
+                radial-gradient(
+                    circle at 100% 50%,
+                    rgba(37, 99, 235, 0.13),
+                    transparent 30%
+                ),
+
+                radial-gradient(
+                    circle at 0% 100%,
+                    rgba(124, 58, 237, 0.10),
+                    transparent 30%
+                ),
+
+                #080910;
+
+            overflow-x: hidden;
+
+        }
 
 
-    /* =========================================
-       DESKTOP
-       ========================================= */
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
 
-    @media (min-width: 700px) {
+
+        button {
+            font-family: inherit;
+        }
+
+
+        /* =========================================
+           BACKGROUND
+           ========================================= */
+
+        body::before {
+
+            content: "";
+
+            position: fixed;
+
+            width: 500px;
+            height: 500px;
+
+            top: -250px;
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            background:
+                rgba(124, 58, 237, 0.14);
+
+            filter:
+                blur(110px);
+
+            border-radius: 50%;
+
+            pointer-events: none;
+
+            z-index: -1;
+
+        }
+
+
+        /* =========================================
+           CONTAINER
+           ========================================= */
 
         .page {
-            padding-top: 55px;
+
+            width: 100%;
+            max-width: 1120px;
+
+            margin: 0 auto;
+
+            padding:
+                35px 18px
+                45px;
+
         }
 
 
-        .avatar {
-            width: 110px;
-            height: 110px;
+        /* =========================================
+           HEADER
+           ========================================= */
 
-            font-size: 44px;
+        .site-header {
+
+            display: flex;
+
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 20px;
+
+            margin-bottom: 60px;
+
         }
 
 
-        .profile h1 {
-            font-size: 29px;
+        .brand {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
         }
 
 
-        .profile p {
-            font-size: 15px;
+        .brand-logo {
+
+            width: 48px;
+            height: 48px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 15px;
+
+            background:
+
+                linear-gradient(
+                    135deg,
+                    #8b5cf6,
+                    #2563eb
+                );
+
+            box-shadow:
+
+                0 12px 30px
+                rgba(0, 0, 0, 0.35);
+
         }
 
 
-        .link-card {
-            min-height: 84px;
+        .brand-logo svg {
 
-            padding: 15px 16px;
+            width: 26px;
+            height: 26px;
+
         }
 
 
-        .link-title {
-            font-size: 15px;
+        .brand-text strong {
+
+            display: block;
+
+            font-size: 19px;
+
+            font-weight: 800;
+
+            letter-spacing: -0.5px;
+
         }
 
 
-        .link-description {
-            font-size: 12px;
-        }
+        .brand-text span {
 
+            display: block;
 
-        .link-cta {
+            margin-top: 2px;
+
+            color: #8f91a0;
+
             font-size: 11px;
 
-            padding: 9px 12px;
-        }
-
-    }
-
-
-    /* =========================================
-       VERY SMALL PHONES
-       ========================================= */
-
-    @media (max-width: 370px) {
-
-        .page {
-            padding-left: 12px;
-            padding-right: 12px;
         }
 
 
-        .link-card {
+        .update-badge {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            padding:
+                10px 15px;
+
+            border-radius: 15px;
+
+            background:
+                rgba(255, 255, 255, 0.045);
+
+            border:
+                1px solid
+                rgba(255, 255, 255, 0.09);
+
+            color: #a7a9b7;
+
+            font-size: 11px;
+
+        }
+
+
+        .update-dot {
+
+            width: 9px;
+            height: 9px;
+
+            border-radius: 50%;
+
+            background: #22c55e;
+
+            box-shadow:
+                0 0 15px
+                rgba(34, 197, 94, 0.8);
+
+        }
+
+
+        /* =========================================
+           HERO
+           ========================================= */
+
+        .hero {
+
+            max-width: 850px;
+
+            margin:
+                0 auto
+                55px;
+
+            text-align: center;
+
+        }
+
+
+        .hero-badge {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            padding:
+                8px 14px;
+
+            margin-bottom: 20px;
+
+            border-radius: 999px;
+
+            background:
+                rgba(124, 58, 237, 0.13);
+
+            border:
+                1px solid
+                rgba(167, 139, 250, 0.25);
+
+            color: #c4b5fd;
+
+            font-size: 12px;
+
+            font-weight: 700;
+
+        }
+
+
+        .hero h1 {
+
+            font-size:
+                clamp(
+                    34px,
+                    7vw,
+                    60px
+                );
+
+            line-height: 1.05;
+
+            letter-spacing: -2px;
+
+            font-weight: 850;
+
+            margin-bottom: 18px;
+
+        }
+
+
+        .hero h1 span {
+
+            background:
+
+                linear-gradient(
+                    90deg,
+                    #60a5fa,
+                    #a78bfa,
+                    #ec4899
+                );
+
+            -webkit-background-clip:
+                text;
+
+            background-clip:
+                text;
+
+            color:
+                transparent;
+
+        }
+
+
+        .hero p {
+
+            max-width: 620px;
+
+            margin:
+                0 auto;
+
+            color: #a5a7b5;
+
+            font-size: 15px;
+
+            line-height: 1.7;
+
+        }
+
+
+        /* =========================================
+           INFO BOXES
+           ========================================= */
+
+        .benefits {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(
+                    3,
+                    1fr
+                );
+
+            gap: 14px;
+
+            max-width: 900px;
+
+            margin:
+                35px auto
+                0;
+
+        }
+
+
+        .benefit {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            padding: 15px;
+
+            text-align: left;
+
+            border-radius: 17px;
+
+            background:
+                rgba(255, 255, 255, 0.035);
+
+            border:
+                1px solid
+                rgba(255, 255, 255, 0.07);
+
+        }
+
+
+        .benefit-icon {
+
+            width: 38px;
+            height: 38px;
+
+            flex-shrink: 0;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 12px;
+
+            background:
+                rgba(124, 58, 237, 0.18);
+
+        }
+
+
+        .benefit-icon svg {
+
+            width: 20px;
+            height: 20px;
+
+        }
+
+
+        .benefit strong {
+
+            display: block;
+
+            margin-bottom: 3px;
+
+            font-size: 12px;
+
+        }
+
+
+        .benefit span {
+
+            color: #858794;
+
+            font-size: 10px;
+
+            line-height: 1.4;
+
+        }
+
+
+        /* =========================================
+           SECTION
+           ========================================= */
+
+        .section {
+
+            margin-top: 55px;
+
+        }
+
+
+        .section-heading {
+
+            display: flex;
+
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 20px;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .section-heading h2 {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            font-size: 20px;
+
+            letter-spacing: -0.5px;
+
+        }
+
+
+        .section-heading h2::before {
+
+            content: "";
+
+            width: 5px;
+            height: 25px;
+
+            border-radius: 999px;
+
+            background:
+
+                linear-gradient(
+                    180deg,
+                    #a78bfa,
+                    #3b82f6
+                );
+
+        }
+
+
+        .section-heading p {
+
+            color: #777987;
+
+            font-size: 11px;
+
+        }
+
+
+        /* =========================================
+           BANK GRID
+           ========================================= */
+
+        .bank-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(
+                    2,
+                    minmax(
+                        0,
+                        1fr
+                    )
+                );
+
+            gap: 18px;
+
+        }
+
+
+        /* =========================================
+           BANK CARD
+           ========================================= */
+
+        .bank-card {
+
+            position: relative;
+
+            padding: 22px;
+
+            border-radius: 24px;
+
+            overflow: hidden;
+
+            background:
+
+                linear-gradient(
+                    145deg,
+                    rgba(21, 26, 43, 0.96),
+                    rgba(10, 13, 24, 0.98)
+                );
+
+            border:
+                1px solid
+                rgba(255, 255, 255, 0.09);
+
+            box-shadow:
+
+                0 18px 45px
+                rgba(0, 0, 0, 0.18);
+
+            transition:
+
+                transform 0.25s ease,
+                border-color 0.25s ease,
+                box-shadow 0.25s ease;
+
+        }
+
+
+        .bank-card:hover {
+
+            transform:
+                translateY(-4px);
+
+            border-color:
+                rgba(167, 139, 250, 0.35);
+
+            box-shadow:
+
+                0 24px 55px
+                rgba(0, 0, 0, 0.30);
+
+        }
+
+
+        .bank-card::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 200px;
+            height: 200px;
+
+            top: -130px;
+            right: -100px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(124, 58, 237, 0.08);
+
+            filter:
+                blur(30px);
+
+            pointer-events: none;
+
+        }
+
+
+        /* =========================================
+           BANK TOP
+           ========================================= */
+
+        .bank-top {
+
+            display: flex;
+
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 14px;
+
+            margin-bottom: 18px;
+
+        }
+
+
+        .bank-brand {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 14px;
+
+            min-width: 0;
+
+        }
+
+
+        /* =========================================
+           LOGO
+           ========================================= */
+
+        .bank-logo {
+
+            width: 66px;
+            height: 66px;
+
+            flex-shrink: 0;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 18px;
+
+            background: #ffffff;
+
+            box-shadow:
+
+                0 10px 25px
+                rgba(0, 0, 0, 0.25);
+
+            overflow: hidden;
+
+        }
+
+
+        .bank-logo svg {
+
+            width: 48px;
+            height: 48px;
+
+        }
+
+
+        /* BNP */
+
+        .logo-bnp {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ffffff,
+                    #e9f8ef
+                );
+
+        }
+
+
+        /* PKO */
+
+        .logo-pko {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ffffff,
+                    #eef4fb
+                );
+
+        }
+
+
+        /* NEST */
+
+        .logo-nest {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #24b7c4,
+                    #0c7f89
+                );
+
+        }
+
+
+        /* MBANK */
+
+        .logo-mbank {
+
+            background:
+                #ffffff;
+
+        }
+
+
+        /* UNICREDIT */
+
+        .logo-unicredit {
+
+            background:
+                #ffffff;
+
+        }
+
+
+        /* ALIOR */
+
+        .logo-alior {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #fff8e6,
+                    #f3d894
+                );
+
+        }
+
+
+        .bank-name {
+
+            min-width: 0;
+
+        }
+
+
+        .bank-name h3 {
+
+            font-size: 18px;
+
+            font-weight: 800;
+
+            letter-spacing: -0.4px;
+
+        }
+
+
+        .bank-name p {
+
+            margin-top: 4px;
+
+            color: #8c8f9e;
+
+            font-size: 11px;
+
+        }
+
+
+        /* =========================================
+           OFFER BADGE
+           ========================================= */
+
+        .offer-status {
+
+            flex-shrink: 0;
+
+            padding:
+                8px 10px;
+
+            border-radius: 10px;
+
+            background:
+                rgba(34, 197, 94, 0.12);
+
+            border:
+                1px solid
+                rgba(34, 197, 94, 0.18);
+
+            color: #86efac;
+
+            font-size: 10px;
+
+            font-weight: 800;
+
+        }
+
+
+        /* =========================================
+           BANK DESCRIPTION
+           ========================================= */
+
+        .bank-description {
+
+            min-height: 48px;
+
+            margin-bottom: 20px;
+
+            color: #b0b2bd;
+
+            font-size: 12px;
+
+            line-height: 1.6;
+
+        }
+
+
+        /* =========================================
+           INFO GRID
+           ========================================= */
+
+        .bank-info {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(
+                    3,
+                    1fr
+                );
+
+            gap: 10px;
+
+            margin-bottom: 18px;
+
+        }
+
+
+        .info-item {
+
+            padding: 10px 7px;
+
+            text-align: center;
+
+            border-radius: 12px;
+
+            background:
+                rgba(255, 255, 255, 0.025);
+
+            border:
+                1px solid
+                rgba(255, 255, 255, 0.04);
+
+        }
+
+
+        .info-icon {
+
+            display: flex;
+
+            justify-content: center;
+
+            margin-bottom: 6px;
+
+            color: #a78bfa;
+
+        }
+
+
+        .info-icon svg {
+
+            width: 17px;
+            height: 17px;
+
+        }
+
+
+        .info-label {
+
+            display: block;
+
+            margin-bottom: 3px;
+
+            color: #737582;
+
+            font-size: 8px;
+
+        }
+
+
+        .info-value {
+
+            display: block;
+
+            color: #e4e4e7;
+
+            font-size: 9px;
+
+            font-weight: 700;
+
+            line-height: 1.3;
+
+        }
+
+
+        /* =========================================
+           CONDITIONS
+           ========================================= */
+
+        .conditions {
+
+            padding: 14px;
+
+            margin-bottom: 17px;
+
+            border-radius: 16px;
+
+            background:
+
+                linear-gradient(
+                    135deg,
+                    rgba(255, 255, 255, 0.045),
+                    rgba(255, 255, 255, 0.015)
+                );
+
+            border:
+                1px solid
+                rgba(255, 255, 255, 0.05);
+
+        }
+
+
+        .conditions-title {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 7px;
+
+            margin-bottom: 9px;
+
+            font-size: 11px;
+
+            font-weight: 800;
+
+        }
+
+
+        .conditions-title svg {
+
+            width: 15px;
+            height: 15px;
+
+            color: #a78bfa;
+
+        }
+
+
+        .conditions ul {
+
+            list-style: none;
+
+        }
+
+
+        .conditions li {
+
+            position: relative;
+
+            padding-left: 17px;
+
+            margin-top: 6px;
+
+            color: #9c9eaa;
+
+            font-size: 10px;
+
+            line-height: 1.4;
+
+        }
+
+
+        .conditions li::before {
+
+            content: "✓";
+
+            position: absolute;
+
+            left: 0;
+
+            color: #22c55e;
+
+            font-weight: 800;
+
+        }
+
+
+        /* =========================================
+           NOTICE
+           ========================================= */
+
+        .offer-notice {
+
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 8px;
+
+            margin-bottom: 16px;
+
+            color: #737582;
+
+            font-size: 9px;
+
+            line-height: 1.5;
+
+        }
+
+
+        .offer-notice svg {
+
+            width: 15px;
+            height: 15px;
+
+            flex-shrink: 0;
+
+            margin-top: 1px;
+
+        }
+
+
+        /* =========================================
+           CTA
+           ========================================= */
+
+        .offer-button {
+
+            width: 100%;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
             gap: 9px;
 
-            padding: 11px;
+            padding: 15px;
+
+            border-radius: 15px;
+
+            background:
+
+                linear-gradient(
+                    135deg,
+                    #7c3aed,
+                    #2563eb
+                );
+
+            color: #ffffff;
+
+            font-size: 12px;
+
+            font-weight: 800;
+
+            transition:
+
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
+
         }
 
 
-        .link-icon {
+        .offer-button:hover {
+
+            transform:
+                translateY(-2px);
+
+            box-shadow:
+
+                0 12px 30px
+                rgba(99, 102, 241, 0.25);
+
+        }
+
+
+        .offer-button svg {
+
+            width: 17px;
+            height: 17px;
+
+        }
+
+
+        /* =========================================
+           AXI SECTION
+           ========================================= */
+
+        .other-offers {
+
+            margin-top: 55px;
+
+        }
+
+
+        .axi-card {
+
+            display: grid;
+
+            grid-template-columns:
+                auto
+                1fr
+                auto;
+
+            align-items: center;
+
+            gap: 20px;
+
+            padding: 22px;
+
+            border-radius: 24px;
+
+            background:
+
+                linear-gradient(
+                    135deg,
+                    rgba(127, 29, 29, 0.20),
+                    rgba(20, 12, 20, 0.96)
+                );
+
+            border:
+                1px solid
+                rgba(239, 68, 68, 0.18);
+
+        }
+
+
+        .axi-logo {
+
+            width: 68px;
+            height: 68px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 18px;
+
+            background:
+
+                linear-gradient(
+                    135deg,
+                    #e30613,
+                    #8b0008
+                );
+
+            box-shadow:
+
+                0 12px 28px
+                rgba(0, 0, 0, 0.30);
+
+        }
+
+
+        .axi-logo strong {
+
+            font-size: 23px;
+
+            letter-spacing: -1px;
+
+        }
+
+
+        .axi-content h3 {
+
+            margin-bottom: 5px;
+
+            font-size: 18px;
+
+        }
+
+
+        .axi-content p {
+
+            max-width: 600px;
+
+            color: #9e9eaa;
+
+            font-size: 11px;
+
+            line-height: 1.6;
+
+        }
+
+
+        .axi-warning {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 6px;
+
+            margin-top: 9px;
+
+            color: #fbbf24;
+
+            font-size: 10px;
+
+            font-weight: 700;
+
+        }
+
+
+        .axi-button {
+
+            flex-shrink: 0;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            padding:
+                14px 18px;
+
+            border-radius: 14px;
+
+            background:
+                #ffffff;
+
+            color: #111111;
+
+            font-size: 11px;
+
+            font-weight: 800;
+
+        }
+
+
+        /* =========================================
+           SAFETY BOX
+           ========================================= */
+
+        .safety-box {
+
+            display: grid;
+
+            grid-template-columns:
+                1fr
+                1fr;
+
+            gap: 20px;
+
+            margin-top: 55px;
+
+            padding: 22px;
+
+            border-radius: 24px;
+
+            background:
+
+                linear-gradient(
+                    135deg,
+                    rgba(37, 99, 235, 0.10),
+                    rgba(124, 58, 237, 0.10)
+                );
+
+            border:
+                1px solid
+                rgba(139, 92, 246, 0.18);
+
+        }
+
+
+        .safety-item {
+
+            display: flex;
+
+            gap: 14px;
+
+        }
+
+
+        .safety-icon {
+
             width: 44px;
             height: 44px;
 
-            flex-basis: 44px;
-        }
+            flex-shrink: 0;
 
+            display: flex;
 
-        .link-cta {
-            display: none;
-        }
+            align-items: center;
+            justify-content: center;
 
-    }
+            border-radius: 14px;
 
-
-    /* =========================================
-       REDUCED MOTION
-       ========================================= */
-
-    @media (prefers-reduced-motion: reduce) {
-
-        *,
-        *::before,
-        *::after {
-
-            animation-duration: 0.01ms !important;
-
-            animation-iteration-count: 1 !important;
-
-            scroll-behavior: auto !important;
-
-            transition-duration: 0.01ms !important;
+            background:
+                rgba(124, 58, 237, 0.18);
 
         }
 
-    }
 
-</style>
+        .safety-icon svg {
 
-</head><body><main class="page" id="top">
+            width: 22px;
+            height: 22px;
 
-
-    <!-- =====================================
-         PROFIL
-         ===================================== -->
-
-    <section class="profile">
+        }
 
 
-        <div class="avatar">
+        .safety-item h3 {
 
-            <i class="fa-solid fa-tags"></i>
+            margin-bottom: 6px;
+
+            font-size: 12px;
+
+        }
+
+
+        .safety-item p {
+
+            color: #898b98;
+
+            font-size: 10px;
+
+            line-height: 1.6;
+
+        }
+
+
+        /* =========================================
+           AFFILIATE
+           ========================================= */
+
+        .affiliate-box {
+
+            margin-top: 18px;
+
+            padding: 20px;
+
+            border-radius: 20px;
+
+            background:
+                rgba(255, 255, 255, 0.025);
+
+            border:
+                1px solid
+                rgba(255, 255, 255, 0.06);
+
+        }
+
+
+        .affiliate-box h3 {
+
+            margin-bottom: 8px;
+
+            font-size: 12px;
+
+        }
+
+
+        .affiliate-box p {
+
+            color: #777986;
+
+            font-size: 10px;
+
+            line-height: 1.7;
+
+        }
+
+
+        /* =========================================
+           FOOTER
+           ========================================= */
+
+        footer {
+
+            margin-top: 45px;
+
+            padding-top: 25px;
+
+            border-top:
+                1px solid
+                rgba(255, 255, 255, 0.06);
+
+            text-align: center;
+
+        }
+
+
+        .footer-brand {
+
+            margin-bottom: 8px;
+
+            font-size: 14px;
+
+            font-weight: 800;
+
+        }
+
+
+        .footer-brand span {
+
+            color: #a78bfa;
+
+        }
+
+
+        .footer-text {
+
+            max-width: 700px;
+
+            margin: 0 auto;
+
+            color: #555762;
+
+            font-size: 9px;
+
+            line-height: 1.7;
+
+        }
+
+
+        /* =========================================
+           TOP BUTTON
+           ========================================= */
+
+        .top-button {
+
+            position: fixed;
+
+            right: 18px;
+            bottom: 18px;
+
+            width: 46px;
+            height: 46px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border: 0;
+
+            border-radius: 50%;
+
+            background:
+                rgba(28, 28, 38, 0.90);
+
+            border:
+                1px solid
+                rgba(255, 255, 255, 0.10);
+
+            color: #ffffff;
+
+            cursor: pointer;
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            transform:
+                translateY(12px);
+
+            transition:
+                0.25s;
+
+            backdrop-filter:
+                blur(15px);
+
+        }
+
+
+        .top-button.show {
+
+            opacity: 1;
+
+            visibility: visible;
+
+            transform:
+                translateY(0);
+
+        }
+
+
+        .top-button svg {
+
+            width: 19px;
+            height: 19px;
+
+        }
+
+
+        /* =========================================
+           RESPONSIVE
+           ========================================= */
+
+        @media (max-width: 800px) {
+
+            .bank-grid {
+
+                grid-template-columns:
+                    1fr;
+
+            }
+
+
+            .benefits {
+
+                grid-template-columns:
+                    1fr;
+
+            }
+
+
+            .safety-box {
+
+                grid-template-columns:
+                    1fr;
+
+            }
+
+
+            .axi-card {
+
+                grid-template-columns:
+                    auto
+                    1fr;
+
+            }
+
+
+            .axi-button {
+
+                grid-column:
+                    1 / -1;
+
+                justify-content: center;
+
+            }
+
+        }
+
+
+        @media (max-width: 550px) {
+
+            .page {
+
+                padding:
+                    22px 13px
+                    35px;
+
+            }
+
+
+            .site-header {
+
+                margin-bottom: 45px;
+
+            }
+
+
+            .update-badge {
+
+                display: none;
+
+            }
+
+
+            .hero h1 {
+
+                letter-spacing:
+                    -1.5px;
+
+            }
+
+
+            .bank-card {
+
+                padding: 17px;
+
+                border-radius: 20px;
+
+            }
+
+
+            .bank-logo {
+
+                width: 56px;
+                height: 56px;
+
+                border-radius: 16px;
+
+            }
+
+
+            .bank-logo svg {
+
+                width: 41px;
+                height: 41px;
+
+            }
+
+
+            .bank-name h3 {
+
+                font-size: 16px;
+
+            }
+
+
+            .offer-status {
+
+                display: none;
+
+            }
+
+
+            .bank-info {
+
+                gap: 6px;
+
+            }
+
+
+            .axi-card {
+
+                gap: 14px;
+
+                padding: 18px;
+
+            }
+
+        }
+
+
+        @media
+        (prefers-reduced-motion: reduce) {
+
+            * {
+
+                scroll-behavior:
+                    auto !important;
+
+                transition:
+                    none !important;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<main class="page" id="top">
+
+
+    <!-- =========================================
+         HEADER
+         ========================================= -->
+
+    <header class="site-header">
+
+
+        <div class="brand">
+
+
+            <div class="brand-logo">
+
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                >
+
+                    <path
+                        d="M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-7"
+                    />
+
+                    <path
+                        d="M12 3v12"
+                    />
+
+                    <path
+                        d="m7 8 5-5 5 5"
+                    />
+
+                </svg>
+
+            </div>
+
+
+            <div class="brand-text">
+
+                <strong>
+                    BankiPromoKody
+                </strong>
+
+                <span>
+                    Promocje • Bonusy • Okazje
+                </span>
+
+            </div>
+
 
         </div>
 
 
-        <div class="profile-badge">
+        <div class="update-badge">
 
-            <i class="fa-solid fa-circle-check"></i>
+            <span class="update-dot"></span>
 
-            Najlepsze oferty online
+            Sprawdzaj aktualne warunki
+
+        </div>
+
+
+    </header>
+
+
+
+    <!-- =========================================
+         HERO
+         ========================================= -->
+
+    <section class="hero">
+
+
+        <div class="hero-badge">
+
+            ✓ INFORMACJE PRZED PRZEJŚCIEM DO OFERTY
 
         </div>
 
 
         <h1>
-            BankiPromoKody
+
+            Wybierz ofertę
+            <span>
+                świadomie.
+            </span>
+
         </h1>
 
 
         <p>
-            Sprawdź wybrane promocje, bonusy,
-            karty, płatności i inne ciekawe
-            oferty dostępne online.
+
+            Zanim przejdziesz do strony partnera,
+            sprawdź rodzaj produktu, dla kogo przeznaczona
+            jest oferta oraz najważniejsze warunki.
+
+        </p>
+
+
+        <div class="benefits">
+
+
+            <div class="benefit">
+
+                <div class="benefit-icon">
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                    >
+
+                        <path
+                            d="M9 12l2 2 4-4"
+                        />
+
+                        <circle
+                            cx="12"
+                            cy="12"
+                            r="9"
+                        />
+
+                    </svg>
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        Jasne informacje
+                    </strong>
+
+                    <span>
+                        Najważniejsze warunki przed kliknięciem.
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="benefit">
+
+                <div class="benefit-icon">
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                    >
+
+                        <path
+                            d="M12 2l8 4v5c0 5-3.5 9-8 11-4.5-2-8-6-8-11V6l8-4z"
+                        />
+
+                    </svg>
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        Świadomy wybór
+                    </strong>
+
+                    <span>
+                        Każda oferta może mieć własne warunki.
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="benefit">
+
+                <div class="benefit-icon">
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                    >
+
+                        <path
+                            d="M3 12h18"
+                        />
+
+                        <path
+                            d="M12 3v18"
+                        />
+
+                    </svg>
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        Więcej szczegółów
+                    </strong>
+
+                    <span>
+                        Ostateczne warunki zawsze sprawdzisz u partnera.
+                    </span>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =========================================
+         BANKS
+         ========================================= -->
+
+    <section class="section">
+
+
+        <div class="section-heading">
+
+            <h2>
+                Konta i promocje bankowe
+            </h2>
+
+
+            <p>
+                Wybrane oferty
+            </p>
+
+        </div>
+
+
+        <div class="bank-grid">
+
+
+            <!-- =====================================
+                 BNP PARIBAS
+                 ===================================== -->
+
+            <article class="bank-card">
+
+
+                <div class="bank-top">
+
+
+                    <div class="bank-brand">
+
+
+                        <div class="bank-logo logo-bnp">
+
+                            <svg
+                                viewBox="0 0 100 100"
+                            >
+
+                                <rect
+                                    width="100"
+                                    height="100"
+                                    rx="16"
+                                    fill="#009b4d"
+                                />
+
+                                <path
+                                    d="M22 33
+                                       C35 25 42 30 47 38
+                                       C40 45 32 46 22 42Z"
+                                    fill="white"
+                                />
+
+                                <path
+                                    d="M55 20
+                                       C67 25 73 33 72 42
+                                       C62 41 55 36 52 27Z"
+                                    fill="white"
+                                />
+
+                                <path
+                                    d="M60 55
+                                       C72 51 81 55 85 66
+                                       C75 70 65 68 58 62Z"
+                                    fill="white"
+                                />
+
+                                <path
+                                    d="M28 65
+                                       C38 55 48 57 55 68
+                                       C47 77 36 78 27 74Z"
+                                    fill="white"
+                                />
+
+                            </svg>
+
+                        </div>
+
+
+                        <div class="bank-name">
+
+                            <h3>
+                                BNP Paribas
+                            </h3>
+
+                            <p>
+                                Konto osobiste
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <span class="offer-status">
+                        SPRAWDŹ PROMOCJĘ
+                    </span>
+
+
+                </div>
+
+
+                <p class="bank-description">
+
+                    Oferta konta osobistego dla klientów,
+                    którzy chcą sprawdzić aktualnie dostępne
+                    promocje oraz ewentualne nagrody.
+
+                </p>
+
+
+                <div class="bank-info">
+
+
+                    <div class="info-item">
+
+                        <div class="info-icon">
+                            👤
+                        </div>
+
+                        <span class="info-label">
+                            DLA KOGO
+                        </span>
+
+                        <span class="info-value">
+                            Sprawdź warunki
+                        </span>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <div class="info-icon">
+                            💳
+                        </div>
+
+                        <span class="info-label">
+                            PRODUKT
+                        </span>
+
+                        <span class="info-value">
+                            Konto osobiste
+                        </span>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <div class="info-icon">
+                            🎁
+                        </div>
+
+                        <span class="info-label">
+                            KORZYŚĆ
+                        </span>
+
+                        <span class="info-value">
+                            Zależna od promocji
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="conditions">
+
+                    <div class="conditions-title">
+
+                        Co warto sprawdzić?
+
+                    </div>
+
+
+                    <ul>
+
+                        <li>
+                            Czy promocja jest dostępna dla nowych klientów.
+                        </li>
+
+                        <li>
+                            Czy wymagane są wpływy lub płatności kartą.
+                        </li>
+
+                        <li>
+                            Jaka jest aktualna wysokość nagrody.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <div class="offer-notice">
+
+                    ℹ️
+
+                    <span>
+                        Przed założeniem konta sprawdź aktualny regulamin,
+                        okres promocji oraz wszystkie warunki otrzymania nagrody.
+                    </span>
+
+                </div>
+
+
+                <a
+                    href="https://connectorlink.online/a/kRplqCqPOt8ZGW"
+                    target="_blank"
+                    rel="nofollow sponsored noopener noreferrer"
+                    class="offer-button"
+                >
+
+                    Sprawdź aktualną ofertę →
+
+                </a>
+
+
+            </article>
+
+
+
+            <!-- =====================================
+                 PKO
+                 ===================================== -->
+
+            <article class="bank-card">
+
+
+                <div class="bank-top">
+
+
+                    <div class="bank-brand">
+
+
+                        <div class="bank-logo logo-pko">
+
+                            <svg
+                                viewBox="0 0 100 100"
+                            >
+
+                                <path
+                                    d="M50 14
+                                       C29 14 18 27 18 48
+                                       C18 69 30 84 50 84
+                                       C70 84 82 69 82 48
+                                       C82 27 71 14 50 14Z"
+                                    fill="#004f9e"
+                                />
+
+                                <circle
+                                    cx="50"
+                                    cy="30"
+                                    r="8"
+                                    fill="white"
+                                />
+
+                                <path
+                                    d="M32 48
+                                       H68
+                                       V72
+                                       H32Z"
+                                    fill="white"
+                                />
+
+                            </svg>
+
+                        </div>
+
+
+                        <div class="bank-name">
+
+                            <h3>
+                                PKO Bank Polski
+                            </h3>
+
+                            <p>
+                                Konto osobiste
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <span class="offer-status">
+                        SPRAWDŹ PROMOCJĘ
+                    </span>
+
+
+                </div>
+
+
+                <p class="bank-description">
+
+                    Sprawdź aktualną ofertę konta
+                    oraz dostępne promocje i nagrody
+                    dla klientów spełniających warunki akcji.
+
+                </p>
+
+
+                <div class="bank-info">
+
+
+                    <div class="info-item">
+
+                        <div class="info-icon">
+                            👤
+                        </div>
+
+                        <span class="info-label">
+                            DLA KOGO
+                        </span>
+
+                        <span class="info-value">
+                            Sprawdź promocję
+                        </span>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <div class="info-icon">
+                            🏦
+                        </div>
+
+                        <span class="info-label">
+                            PRODUKT
+                        </span>
+
+                        <span class="info-value">
+                            Konto bankowe
+                        </span>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <div class="info-icon">
+                            🎁
+                        </div>
+
+                        <span class="info-label">
+                            BONUS
+                        </span>
+
+                        <span class="info-value">
+                            Zależny od kampanii
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="conditions">
+
+                    <div class="conditions-title">
+                        Co sprawdzić przed wyborem?
+                    </div>
+
+
+                    <ul>
+
+                        <li>
+                            Aktualną promocję dostępną dla danego konta.
+                        </li>
+
+                        <li>
+                            Warunki aktywności wymagane do otrzymania nagrody.
+                        </li>
+
+                        <li>
+                            Termin zakończenia promocji.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <div class="offer-notice">
+
+                    ℹ️
+
+                    <span>
+                        Kwota maksymalnej nagrody nie oznacza automatycznej
+                        wypłaty — sprawdź wymagania promocji.
+                    </span>
+
+                </div>
+
+
+                <a
+                    href="https://connectorlink.online/a/rkzvAiDmxHNB6g"
+                    target="_blank"
+                    rel="nofollow sponsored noopener noreferrer"
+                    class="offer-button"
+                >
+
+                    Zobacz szczegóły →
+
+                </a>
+
+
+            </article>
+
+
+
+            <!-- =====================================
+                 NEST BANK
+                 ===================================== -->
+
+            <article class="bank-card">
+
+
+                <div class="bank-top">
+
+
+                    <div class="bank-brand">
+
+
+                        <div class="bank-logo logo-nest">
+
+                            <svg
+                                viewBox="0 0 100 100"
+                            >
+
+                                <text
+                                    x="50"
+                                    y="57"
+                                    text-anchor="middle"
+                                    font-size="36"
+                                    font-weight="800"
+                                    font-family="Arial"
+                                    font-style="italic"
+                                    fill="white"
+                                >
+                                    nest
+                                </text>
+
+                                <text
+                                    x="50"
+                                    y="75"
+                                    text-anchor="middle"
+                                    font-size="11"
+                                    font-weight="700"
+                                    font-family="Arial"
+                                    fill="white"
+                                >
+                                    BANK
+                                </text>
+
+                            </svg>
+
+                        </div>
+
+
+                        <div class="bank-name">
+
+                            <h3>
+                                Nest Bank
+                            </h3>
+
+                            <p>
+                                Nest Konto
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <span class="offer-status">
+                        SPRAWDŹ PROMOCJĘ
+                    </span>
+
+
+                </div>
+
+
+                <p class="bank-description">
+
+                    Oferta konta dla osób zainteresowanych
+                    aktualnymi bonusami, zwrotami lub dodatkowymi
+                    korzyściami oferowanymi w kampanii.
+
+                </p>
+
+
+                <div class="bank-info">
+
+
+                    <div class="info-item">
+
+                        <div class="info-icon">
+                            👤
+                        </div>
+
+                        <span class="info-label">
+                            DLA KOGO
+                        </span>
+
+                        <span class="info-value">
+                            Sprawdź warunki
+                        </span>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <div class="info-icon">
+                            💳
+                        </div>
+
+                        <span class="info-label">
+                            PRODUKT
+                        </span>
+
+                        <span class="info-value">
+                            Nest Konto
+                        </span>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <div class="info-icon">
+                            🎁
+                        </div>
+
+                        <span class="info-label">
+                            KORZYŚCI
+                        </span>
+
+                        <span class="info-value">
+                            Zależne od oferty
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="conditions">
+
+                    <div class="conditions-title">
+                        Przed kliknięciem sprawdź:
+                    </div>
+
+
+                    <ul>
+
+                        <li>
+                            Czy obowiązuje aktualna promocja dla nowych klientów.
+                        </li>
+
+                        <li>
+                            Czy bonus wymaga płatności kartą.
+                        </li>
+
+                        <li>
+                            Czy istnieją limity miesięcznych korzyści.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <div class="offer-notice">
+
+                    ℹ️
+
+                    <span>
+                        Szczegółowa wysokość nagrody i termin jej wypłaty
+                        zależą od aktualnego regulaminu.
+                    </span>
+
+                </div>
+
+
+                <a
+                    href="https://connectorlink.online/a/yPKDLCLrWXiABgB"
+                    target="_blank"
+                    rel="nofollow sponsored noopener noreferrer"
+                    class="offer-button"
+                >
+
+                    Sprawdź ofertę →
+
+                </a>
+
+
+            </article>
+
+
+
+            <!-- =====================================
+                 MBANK
+                 ===================================== -->
+
+            <article class="bank-card">
+
+
+                <div class="bank-top">
+
+
+                    <div class="bank-brand">
+
+
+                        <div class="bank-logo logo-mbank">
+
+                            <svg
+                                viewBox="0 0 100 100"
+                            >
+
+                                <rect
+                                    x="16"
+                                    y="20"
+                                    width="16"
+                                    height="60"
+                                    fill="#e30613"
+                                />
+
+                                <rect
+                                    x="32"
+                                    y="20"
+                                    width="16"
+                                    height="60"
+                                    fill="#f9b233"
+                                />
+
+                                <rect
+                                    x="48"
+                                    y="20"
+                                    width="16"
+                                    height="60"
+                                    fill="#009640"
+                                />
+
+                                <path
+                                    d="M22 67
+                                       V48
+                                       C22 35 34 30 43 39
+                                       L50 47
+                                       L57 39
+                                       C66 30 78 35 78 48
+                                       V67"
+                                    fill="none"
+                                    stroke="white"
+                                    stroke-width="9"
+                                    stroke-linecap="round"
+                                />
+
+                            </svg>
+
+                        </div>
+
+
+                        <div class="bank-name">
+
+                            <h3>
+                                mBank
+                            </h3>
+
+                            <p>
+                                eKonto
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <span class="offer-status">
+                        SPRAWDŹ PROMOCJĘ
+                    </span>
+
+
+                </div>
+
+
+                <p class="bank-description">
+
+                    Sprawdź aktualne możliwości otwarcia
+                    konta oraz promocje dostępne dla osób,
+                    które spełnią warunki kampanii.
+
+                </p>
+
+
+                <div class="bank-info">
+
+
+                    <div class="info-item">
+
+                        <div class="info-icon">
+                            👤
+                        </div>
+
+                        <span class="info-label">
+                            DLA KOGO
+                        </span>
+
+                        <span class="info-value">
+                            Według promocji
+                        </span>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <div class="info-icon">
+                            🏦
+                        </div>
+
+                        <span class="info-label">
+                            PRODUKT
+                        </span>
+
+                        <span class="info-value">
+                            eKonto
+                        </span>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <div class="info-icon">
+                            🎁
+                        </div>
+
+                        <span class="info-label">
+                            BONUS
+                        </span>
+
+                        <span class="info-value">
+                            Sprawdź aktualny
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="conditions">
+
+                    <div class="conditions-title">
+                        Najważniejsze pytania:
+                    </div>
+
+
+                    <ul>
+
+                        <li>
+                            Czy trzeba zapewnić określone wpływy na konto.
+                        </li>
+
+                        <li>
+                            Ile płatności należy wykonać.
+                        </li>
+
+                        <li>
+                            W jakim terminie wypłacana jest nagroda.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <div class="offer-notice">
+
+                    ℹ️
+
+                    <span>
+                        Promocje mogą różnić się między edycjami,
+                        dlatego zawsze zapoznaj się z aktualnymi zasadami.
+                    </span>
+
+                </div>
+
+
+                <a
+                    href="https://connectorlink.online/a/PNB93f3Km8srgRo"
+                    target="_blank"
+                    rel="nofollow sponsored noopener noreferrer"
+                    class="offer-button"
+                >
+
+                    Sprawdź aktualną ofertę →
+
+                </a>
+
+
+            </article>
+
+
+
+            <!-- =====================================
+                 UNICREDIT
+                 ===================================== -->
+
+            <article class="bank-card">
+
+
+                <div class="bank-top">
+
+
+                    <div class="bank-brand">
+
+
+                        <div class="bank-logo logo-unicredit">
+
+                            <svg
+                                viewBox="0 0 100 100"
+                            >
+
+                                <circle
+                                    cx="50"
+                                    cy="50"
+                                    r="36"
+                                    fill="#e30613"
+                                />
+
+                                <path
+                                    d="M28 68
+                                       L67 29
+                                       L76 38
+                                       L37 77Z"
+                                    fill="white"
+                                />
+
+                                <circle
+                                    cx="71"
+                                    cy="28"
+                                    r="5"
+                                    fill="white"
+                                />
+
+                            </svg>
+
+                        </div>
+
+
+                        <div class="bank-name">
+
+                            <h3>
+                                UniCredit
+                            </h3>
+
+                            <p>
+                                Konto osobiste
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <span class="offer-status">
+                        SPRAWDŹ PROMOCJĘ
+                    </span>
+
+
+                </div>
+
+
+                <p class="bank-description">
+
+                    Sprawdź aktualne warunki konta,
+                    dostępne korzyści oraz wymagania,
+                    które należy spełnić w promocji.
+
+                </p>
+
+
+                <div class="bank-info">
+
+
+                    <div class="info-item">
+
+                        <div class="info-icon">
+                            👤
+                        </div>
+
+                        <span class="info-label">
+                            DLA KOGO
+                        </span>
+
+                        <span class="info-value">
+                            Według regulaminu
+                        </span>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <div class="info-icon">
+                            🏦
+                        </div>
+
+                        <span class="info-label">
+                            PRODUKT
+                        </span>
+
+                        <span class="info-value">
+                            Konto
+                        </span>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <div class="info-icon">
+                            🎁
+                        </div>
+
+                        <span class="info-label">
+                            KORZYŚCI
+                        </span>
+
+                        <span class="info-value">
+                            Zależne od akcji
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="conditions">
+
+                    <div class="conditions-title">
+                        Warto sprawdzić:
+                    </div>
+
+
+                    <ul>
+
+                        <li>
+                            Aktualną ofertę dla nowych klientów.
+                        </li>
+
+                        <li>
+                            Czy wymagane jest korzystanie z karty.
+                        </li>
+
+                        <li>
+                            Szczegóły programu promocyjnego.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <div class="offer-notice">
+
+                    ℹ️
+
+                    <span>
+                        Nie zakładaj konta wyłącznie dla reklamy —
+                        przeczytaj warunki oraz informacje o opłatach.
+                    </span>
+
+                </div>
+
+
+                <a
+                    href="https://connectorlink.online/a/2kLoKi826KuMq8y"
+                    target="_blank"
+                    rel="nofollow sponsored noopener noreferrer"
+                    class="offer-button"
+                >
+
+                    Zobacz ofertę →
+
+                </a>
+
+
+            </article>
+
+
+
+            <!-- =====================================
+                 ALIOR
+                 ===================================== -->
+
+            <article class="bank-card">
+
+
+                <div class="bank-top">
+
+
+                    <div class="bank-brand">
+
+
+                        <div class="bank-logo logo-alior">
+
+                            <svg
+                                viewBox="0 0 100 100"
+                            >
+
+                                <circle
+                                    cx="50"
+                                    cy="50"
+                                    r="35"
+                                    fill="#b68a2c"
+                                />
+
+                                <path
+                                    d="M58 25
+                                       C43 27 33 40 35 57
+                                       C36 70 46 78 59 77
+                                       C70 76 77 67 76 57
+                                       C75 46 68 37 58 34Z"
+                                    fill="#f8df9d"
+                                />
+
+                                <path
+                                    d="M46 48
+                                       Q52 44 58 48"
+                                    stroke="#6b4c10"
+                                    stroke-width="3"
+                                    fill="none"
+                                />
+
+                                <path
+                                    d="M49 64
+                                       Q56 68 63 63"
+                                    stroke="#6b4c10"
+                                    stroke-width="3"
+                                    fill="none"
+                                />
+
+                            </svg>
+
+                        </div>
+
+
+                        <div class="bank-name">
+
+                            <h3>
+                                Alior Bank
+                            </h3>
+
+                            <p>
+                                Konto osobiste
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <span class="offer-status">
+                        SPRAWDŹ PROMOCJĘ
+                    </span>
+
+
+                </div>
+
+
+                <p class="bank-description">
+
+                    Sprawdź aktualną ofertę konta,
+                    możliwe bonusy oraz wszystkie warunki
+                    wymagane do ich otrzymania.
+
+                </p>
+
+
+                <div class="bank-info">
+
+
+                    <div class="info-item">
+
+                        <div class="info-icon">
+                            👤
+                        </div>
+
+                        <span class="info-label">
+                            DLA KOGO
+                        </span>
+
+                        <span class="info-value">
+                            Sprawdź warunki
+                        </span>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <div class="info-icon">
+                            🏦
+                        </div>
+
+                        <span class="info-label">
+                            PRODUKT
+                        </span>
+
+                        <span class="info-value">
+                            Konto osobiste
+                        </span>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <div class="info-icon">
+                            🎁
+                        </div>
+
+                        <span class="info-label">
+                            BONUS
+                        </span>
+
+                        <span class="info-value">
+                            Aktualna promocja
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="conditions">
+
+                    <div class="conditions-title">
+                        Przed przejściem sprawdź:
+                    </div>
+
+
+                    <ul>
+
+                        <li>
+                            Czy promocja wymaga kodu lub rejestracji.
+                        </li>
+
+                        <li>
+                            Jakie transakcje należy wykonać.
+                        </li>
+
+                        <li>
+                            Czy oferta ma określony termin zakończenia.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <div class="offer-notice">
+
+                    ℹ️
+
+                    <span>
+                        Bonusy i dodatkowe nagrody mogą być dostępne
+                        tylko po spełnieniu wszystkich warunków promocji.
+                    </span>
+
+                </div>
+
+
+                <a
+                    href="https://connectorlink.online/a/Nkz23ij0xYC0vl5"
+                    target="_blank"
+                    rel="nofollow sponsored noopener noreferrer"
+                    class="offer-button"
+                >
+
+                    Sprawdź szczegóły →
+
+                </a>
+
+
+            </article>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         AXI
+         ========================================= -->
+
+    <section class="other-offers">
+
+
+        <div class="section-heading">
+
+            <h2>
+                Karty i finansowanie
+            </h2>
+
+        </div>
+
+
+        <article class="axi-card">
+
+
+            <div class="axi-logo">
+
+                <strong>
+                    AXI
+                </strong>
+
+            </div>
+
+
+            <div class="axi-content">
+
+                <h3>
+                    AXI Card
+                </h3>
+
+
+                <p>
+
+                    Oferta dotyczy produktu kredytowego.
+                    Przed złożeniem wniosku sprawdź dokładnie
+                    całkowity koszt kredytu, RRSO, opłaty,
+                    zasady spłaty oraz warunki przyznania limitu.
+
+                </p>
+
+
+                <div class="axi-warning">
+
+                    ⚠️ To nie jest zwykłe konto bankowe.
+
+                </div>
+
+
+            </div>
+
+
+            <a
+                href="https://connectorlink.online/a/R6E03t51XMhonk3"
+                target="_blank"
+                rel="nofollow sponsored noopener noreferrer"
+                class="axi-button"
+            >
+
+                Sprawdź warunki →
+
+            </a>
+
+
+        </article>
+
+
+    </section>
+
+
+
+    <!-- =========================================
+         SAFETY
+         ========================================= -->
+
+    <section class="safety-box">
+
+
+        <div class="safety-item">
+
+
+            <div class="safety-icon">
+
+                🛡️
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Nie klikaj w ciemno
+                </h3>
+
+
+                <p>
+
+                    Przed założeniem produktu sprawdź,
+                    dla kogo jest oferta, jakie warunki
+                    należy spełnić oraz czy promocja
+                    nadal obowiązuje.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="safety-item">
+
+
+            <div class="safety-icon">
+
+                ℹ️
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Warunki mogą się zmieniać
+                </h3>
+
+
+                <p>
+
+                    Strona partnera i regulamin promocji
+                    są ostatecznym źródłem informacji
+                    dotyczących nagród, opłat i warunków.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =========================================
+         AFFILIATE
+         ========================================= -->
+
+    <section class="affiliate-box">
+
+
+        <h3>
+            Informacja o linkach afiliacyjnych
+        </h3>
+
+
+        <p>
+
+            Niektóre linki na stronie są linkami afiliacyjnymi.
+            Oznacza to, że właściciel strony może otrzymać
+            prowizję, jeśli użytkownik skorzysta z oferty
+            po przejściu przez taki link i spełni warunki
+            programu partnerskiego.
+
+            Nie wpływa to na cenę produktu dla użytkownika.
+
+            Przed podjęciem decyzji należy zapoznać się
+            z aktualnymi warunkami oraz regulaminem
+            dostępnymi u partnera.
+
         </p>
 
 
@@ -913,603 +3344,29 @@
 
 
 
-    <!-- =====================================
-         SEKCJA 1
-         BANKI I PROMOCJE
-         ===================================== -->
-
-    <section class="offer-section">
-
-
-        <div class="section-title">
-
-            <i class="fa-solid fa-building-columns"></i>
-
-            Banki i promocje
-
-        </div>
-
-
-        <div class="links">
-
-
-            <!-- BNP PARIBAS -->
-
-            <a
-                href="https://connectorlink.online/a/kRplqCqPOt8ZGW"
-                target="_blank"
-                rel="nofollow sponsored noopener noreferrer"
-                class="link-card"
-            >
-
-                <div class="link-icon icon-bnp">
-                    BNP
-                </div>
-
-
-                <div class="link-content">
-
-                    <span class="link-title">
-                        BNP Paribas
-                    </span>
-
-
-                    <span class="link-description">
-                        Sprawdź aktualną promocję
-                        oraz warunki założenia konta.
-                    </span>
-
-                </div>
-
-
-                <span class="link-cta">
-
-                    Sprawdź
-
-                    <i class="fa-solid fa-arrow-right"></i>
-
-                </span>
-
-            </a>
-
-
-
-            <!-- PKO BANK POLSKI -->
-
-            <a
-                href="https://connectorlink.online/a/rkzvAiDmxHNB6g"
-                target="_blank"
-                rel="nofollow sponsored noopener noreferrer"
-                class="link-card"
-            >
-
-                <div class="link-icon icon-pko">
-                    PKO
-                </div>
-
-
-                <div class="link-content">
-
-                    <span class="link-title">
-                        PKO Bank Polski
-                    </span>
-
-
-                    <span class="link-description">
-                        Sprawdź aktualną ofertę
-                        i promocje dla nowych klientów.
-                    </span>
-
-                </div>
-
-
-                <span class="link-cta">
-
-                    Sprawdź
-
-                    <i class="fa-solid fa-arrow-right"></i>
-
-                </span>
-
-            </a>
-
-
-
-            <!-- NEST BANK -->
-
-            <a
-                href="https://connectorlink.online/a/yPKDLCLrWXiABgB"
-                target="_blank"
-                rel="nofollow sponsored noopener noreferrer"
-                class="link-card"
-            >
-
-                <div class="link-icon icon-nest">
-                    NEST
-                </div>
-
-
-                <div class="link-content">
-
-                    <span class="link-title">
-                        Nest Bank
-                    </span>
-
-
-                    <span class="link-description">
-                        Sprawdź ofertę konta oraz
-                        aktualne warunki promocji.
-                    </span>
-
-                </div>
-
-
-                <span class="link-cta">
-
-                    Sprawdź
-
-                    <i class="fa-solid fa-arrow-right"></i>
-
-                </span>
-
-            </a>
-
-
-
-            <!-- MBANK -->
-
-            <a
-                href="https://connectorlink.online/a/PNB93f3Km8srgRo"
-                target="_blank"
-                rel="nofollow sponsored noopener noreferrer"
-                class="link-card"
-            >
-
-                <div class="link-icon icon-mbank">
-                    m
-                </div>
-
-
-                <div class="link-content">
-
-                    <span class="link-title">
-                        mBank
-                    </span>
-
-
-                    <span class="link-description">
-                        Zobacz aktualną ofertę
-                        oraz warunki promocji.
-                    </span>
-
-                </div>
-
-
-                <span class="link-cta">
-
-                    Sprawdź
-
-                    <i class="fa-solid fa-arrow-right"></i>
-
-                </span>
-
-            </a>
-
-
-
-            <!-- UNICREDIT -->
-
-            <a
-                href="https://connectorlink.online/a/2kLoKi826KuMq8y"
-                target="_blank"
-                rel="nofollow sponsored noopener noreferrer"
-                class="link-card"
-            >
-
-                <div class="link-icon icon-unicredit">
-                    U
-                </div>
-
-
-                <div class="link-content">
-
-                    <span class="link-title">
-                        UniCredit
-                    </span>
-
-
-                    <span class="link-description">
-                        Sprawdź aktualną ofertę
-                        i szczegóły promocji.
-                    </span>
-
-                </div>
-
-
-                <span class="link-cta">
-
-                    Sprawdź
-
-                    <i class="fa-solid fa-arrow-right"></i>
-
-                </span>
-
-            </a>
-
-
-
-            <!-- ALIOR BANK -->
-
-            <a
-                href="https://connectorlink.online/a/Nkz23ij0xYC0vl5"
-                target="_blank"
-                rel="nofollow sponsored noopener noreferrer"
-                class="link-card"
-            >
-
-                <div class="link-icon icon-alior">
-                    AL
-                </div>
-
-
-                <div class="link-content">
-
-                    <span class="link-title">
-                        Alior Bank
-                    </span>
-
-
-                    <span class="link-description">
-                        Sprawdź aktualną promocję
-                        oraz warunki założenia konta.
-                    </span>
-
-                </div>
-
-
-                <span class="link-cta">
-
-                    Sprawdź
-
-                    <i class="fa-solid fa-arrow-right"></i>
-
-                </span>
-
-            </a>
-
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =====================================
-         SEKCJA 2
-         KARTY I PŁATNOŚCI
-         ===================================== -->
-
-    <section class="offer-section">
-
-
-        <div class="section-title">
-
-            <i class="fa-solid fa-credit-card"></i>
-
-            Karty i płatności
-
-        </div>
-
-
-        <div class="links">
-
-
-            <!-- AXI CARD -->
-
-            <a
-                href="https://connectorlink.online/a/R6E03t51XMhonk3"
-                target="_blank"
-                rel="nofollow sponsored noopener noreferrer"
-                class="link-card"
-            >
-
-                <div class="link-icon icon-axi">
-                    AXI
-                </div>
-
-
-                <div class="link-content">
-
-                    <span class="link-title">
-                        AXI Card
-                    </span>
-
-
-                    <span class="link-description">
-                        Sprawdź ofertę karty oraz
-                        aktualne warunki.
-                    </span>
-
-                </div>
-
-
-                <span class="link-cta">
-
-                    Sprawdź
-
-                    <i class="fa-solid fa-arrow-right"></i>
-
-                </span>
-
-            </a>
-
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =====================================
-         SEKCJA 3
-         GRY I ROZRYWKA
-         ===================================== -->
-
-    <section class="offer-section">
-
-
-        <div class="section-title">
-
-            <i class="fa-solid fa-gamepad"></i>
-
-            Gry i rozrywka
-
-        </div>
-
-
-        <div class="links">
-
-
-            <!--
-            WSTAW TUTAJ PÓŹNIEJ LINK
-            Z MYLEAD
-            -->
-
-
-            <a
-                href="#"
-                class="link-card"
-            >
-
-                <div class="link-icon icon-game">
-
-                    <i class="fa-solid fa-gamepad"></i>
-
-                </div>
-
-
-                <div class="link-content">
-
-                    <span class="link-title">
-                        Darmowa gra online
-                    </span>
-
-
-                    <span class="link-description">
-                        Sprawdź dostępne oferty
-                        dla nowych użytkowników.
-                    </span>
-
-                </div>
-
-
-                <span class="link-cta">
-
-                    Zagraj
-
-                    <i class="fa-solid fa-arrow-right"></i>
-
-                </span>
-
-            </a>
-
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =====================================
-         SEKCJA 4
-         BONUSY
-         ===================================== -->
-
-    <section class="offer-section">
-
-
-        <div class="section-title">
-
-            <i class="fa-solid fa-gift"></i>
-
-            Bonusy i oferty specjalne
-
-        </div>
-
-
-        <div class="links">
-
-
-            <a
-                href="#"
-                class="link-card"
-            >
-
-                <div class="link-icon icon-gift">
-
-                    <i class="fa-solid fa-gift"></i>
-
-                </div>
-
-
-                <div class="link-content">
-
-                    <span class="link-title">
-                        Bonusy i promocje
-                    </span>
-
-
-                    <span class="link-description">
-                        Sprawdź aktualne bonusy
-                        oraz oferty specjalne.
-                    </span>
-
-                </div>
-
-
-                <span class="link-cta">
-
-                    Sprawdź
-
-                    <i class="fa-solid fa-arrow-right"></i>
-
-                </span>
-
-            </a>
-
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =====================================
-         SEKCJA 5
-         PROMOCJE I RABATY
-         ===================================== -->
-
-    <section class="offer-section">
-
-
-        <div class="section-title">
-
-            <i class="fa-solid fa-cart-shopping"></i>
-
-            Promocje i rabaty
-
-        </div>
-
-
-        <div class="links">
-
-
-            <a
-                href="#"
-                class="link-card"
-            >
-
-                <div class="link-icon icon-cart">
-
-                    <i class="fa-solid fa-cart-shopping"></i>
-
-                </div>
-
-
-                <div class="link-content">
-
-                    <span class="link-title">
-                        Promocje i rabaty
-                    </span>
-
-
-                    <span class="link-description">
-                        Sprawdź aktualne okazje
-                        i dostępne rabaty.
-                    </span>
-
-                </div>
-
-
-                <span class="link-cta">
-
-                    Zobacz
-
-                    <i class="fa-solid fa-arrow-right"></i>
-
-                </span>
-
-            </a>
-
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =====================================
-         INFORMACJA AFILIACYJNA
-         ===================================== -->
-
-    <div class="trust-box">
-
-        <i class="fa-solid fa-circle-info"></i>
-
-
-        <span>
-
-            Strona zawiera linki afiliacyjne.
-            Właściciel strony może otrzymywać
-            prowizję za rejestracje lub skorzystanie
-            z ofert dokonane za pośrednictwem
-            tych linków.
-
-            Przed skorzystaniem z oferty
-            zapoznaj się z jej aktualnymi
-            warunkami.
-
-        </span>
-
-    </div>
-
-
-
-    <!-- =====================================
+    <!-- =========================================
          FOOTER
-         ===================================== -->
+         ========================================= -->
 
     <footer>
 
 
         <div class="footer-brand">
 
-            © 2026 BankiPromoKody
+            Banki<span>PromoKody</span>
 
         </div>
 
 
-        <div class="footer-copy">
+        <p class="footer-text">
 
-            Wszelkie prawa zastrzeżone.
+            © 2026 BankiPromoKody. Strona ma charakter
+            informacyjny i promocyjny. Informacje dotyczące
+            promocji mogą ulegać zmianie. Przed skorzystaniem
+            z oferty zapoznaj się z aktualnymi warunkami
+            oraz regulaminem partnera.
 
-        </div>
-
-
-        <div class="affiliate-disclaimer">
-
-            Strona ma charakter informacyjny
-            i promocyjny oraz zawiera linki
-            afiliacyjne.
-
-            Promocje, bonusy oraz warunki
-            uczestnictwa mogą ulegać zmianie.
-
-            Przed skorzystaniem z oferty należy
-            zapoznać się z aktualnymi warunkami
-            dostępnymi u partnera.
-
-        </div>
+        </p>
 
 
     </footer>
@@ -1520,49 +3377,66 @@
 
 
 <!-- =========================================
-     PRZYCISK POWROTU NA GÓRĘ
+     TOP BUTTON
      ========================================= -->
 
 <button
     class="top-button"
     id="topButton"
     aria-label="Wróć na górę"
-    title="Wróć na górę"
 >
 
-    <i class="fa-solid fa-arrow-up"></i>
+
+    <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+    >
+
+        <path
+            d="M18 15l-6-6-6 6"
+        />
+
+    </svg>
+
 
 </button>
 
 
 
-<!-- =========================================
-     JAVASCRIPT
-     ========================================= -->
-
 <script>
 
-    /* ==============================
-       PRZYCISK GÓRA
-       ============================== */
 
     const topButton =
-        document.getElementById("topButton");
+        document.getElementById(
+            "topButton"
+        );
 
 
     window.addEventListener(
         "scroll",
         function () {
 
-            if (window.scrollY > 300) {
 
-                topButton.classList.add("show");
+            if (
+                window.scrollY > 400
+            ) {
 
-            } else {
-
-                topButton.classList.remove("show");
+                topButton.classList.add(
+                    "show"
+                );
 
             }
+
+            else {
+
+                topButton.classList.remove(
+                    "show"
+                );
+
+            }
+
 
         }
     );
@@ -1572,45 +3446,23 @@
         "click",
         function () {
 
+
             window.scrollTo({
 
                 top: 0,
 
-                behavior: "smooth"
+                behavior:
+                    "smooth"
 
             });
 
-        }
-    );
-
-
-    /* ==============================
-       KLIKNIĘCIA OFERT
-       ============================== */
-
-    const offerLinks =
-        document.querySelectorAll(".link-card");
-
-
-    offerLinks.forEach(
-        function (link, index) {
-
-            link.addEventListener(
-                "click",
-                function () {
-
-                    console.log(
-                        "Kliknięto ofertę:",
-                        index + 1
-                    );
-
-                }
-            );
 
         }
     );
+
 
 </script>
 
+
 </body>
-</html>
+    </html>
